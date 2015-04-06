@@ -43,7 +43,7 @@
 			<h2>登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录</h2>
 		</div>
 		<div data-role="content">
-			<form method="post" action="check.php" data-ajax="false" id="frmLogin" onsubmit="return validate_form(this)">
+			<form method="post" action="check_user.php" data-ajax="false" id="frmLogin" onsubmit="return validate_form(this)">
 			  <div data-role="fieldcontain">
 			    <label for="username">用户名:</label>
 			    <input type="text" name="username" id="username">
