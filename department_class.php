@@ -1,10 +1,8 @@
 <?php
 	require_once("class_database.php");
-	class user
-	{
-		private $user_id;
-		private $username;
-		private $password;
+	class department{
+		private $id;
+		private $department_name;
 
 		// 方法
 		// __get(): 获取属性值
@@ -32,38 +30,18 @@
 
  		}
 
- 		function queryRows(){
- 			$sql="SELECT * FROM user ";
- 			$sql.="where username='$this->username'";
-            // echo $sql;
- 			$db=new database;
- 			$rows=$db->queryRows($sql);
- 			$db=mull;
- 			return $rows;
- 		}
-
  		function query_all(){
- 			$sql="SELECT * FROM user ";
+ 			$sql="SELECT * FROM department";
  			$db=new database;
- 			$user=$db->query($sql);
+ 			$department=$db->query($sql);
  			$db=null;
- 			return $user;
+ 			return $department;
  		}
 
- 		function queryId(){
- 			$sql="SELECT user_id FROM user ";
- 			$sql.="where username='$this->username'";
- 			$db=new database;
-            // echo $sql;
- 			$user_id=$db->executeSFOR($sql);
- 			$db=null;
- 			return $user_id->user_id;
 
- 		}
-
- 		function add(){
- 			$sql="INSERT INTO user (username,password)";
- 			$sql.=" VALUES('$this->username','$this->password')";
+ 		function add_new(){
+ 			$sql="INSERT INTO department (department_name)";
+ 			$sql.=" VALUES('$this->department_name')";
             // echo $sql;
  			$db=new database;
  			$db->execute($sql);
@@ -71,11 +49,27 @@
  		}
 
  		function query_one(){
- 			$sql = "SELECT * FROM user ";
- 			$sql .= "WHERE username='$this->username'";
+ 			$sql = "SELECT * FROM department ";
+ 			$sql .= "WHERE id='$this->id'";
  			$db = new database;
  			$line = $db -> executeSFOR($sql);
  			return $line;
  		}
+
+ 		function update(){
+ 			$sql = "UPDATE department SET department_name='$this->department_name'";
+ 			$sql .= " WHERE id=$this->id";
+ 			$db = new database;
+ 			$db->execute($sql);
+ 			$db=NULL;
+ 		}
+
+ 		function delete(){
+ 			$sql = "DELETE FROM department WHERE id=$this->id";
+ 			$db = new database;
+ 			$db->execute($sql);
+ 			$db=NULL;
+ 		}
+
 	}
 ?>

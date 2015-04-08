@@ -5,6 +5,7 @@ require("class_database.php");
 require("all_func.php");
 require("header.php");
 
+
 ?>
 
 	<div data-role="page">
@@ -19,13 +20,59 @@ require("header.php");
 					echo "<script>location='login.php';</script>";
 				}
 				$username_S = $_SESSION["username"];
+				$mark_S = $_SESSION["mark"];
 				// print $username_S .  ",您好！";
 				$action=$_REQUEST["action"];
-				if ($action == "show_userlist") {
-					show_userlist();
+				if ($mark_S == 1){
+						/* department 部门管理*/
+					if ($action == "department"){
+						show_departments();
+					} else if ($action == "add_department") {
+						show_one_department(-1);		
+					} else if ($action == "show_details") {
+						show_one_department($_REQUEST['id']);
+					} else if ($action == "upsert") {
+						if ($_REQUEST['id'] == -1) {
+							add_department($_REQUEST['department']);
+						} else {
+							update_department($_REQUEST['id'], $_REQUEST['department']);
+						}
+						show_departments();
+					} else if ($action == "delete_department") {
+						kill_department($_REQUEST['id']);
+						show_departments();
+						/* end 部门管理*/
+						/* 用户管理 */
+					} else if ($action == "user_manage"){
+						show_users();
+					} else if ($action == "add_user") {
+						show_one_user(-1);		
+					} else if ($action == "show_details") {
+						show_one_user($_REQUEST['id']);
+					} else if ($action == "upsert") {
+						if ($_REQUEST['id'] == -1) {
+							add_user($_REQUEST['user']);
+						} else {
+							update_user($_REQUEST['id'], $_REQUEST['user']);
+						}
+						show_users();
+					} else if ($action == "delete_user") {
+						kill_user($_REQUEST['id']);
+						show_users();
+						/* 用户管理 end */
+					} else {
+
+						show_menu($username_S);
+					}
 				} else {
-					show_menu($username_S);
+					if ($action == "show_msg"){
+						show_msg();
+					}else{
+						show_menu($username_S);
+					}
 				}
+
+
 
 			?>
 			
@@ -33,9 +80,6 @@ require("header.php");
 		<div data-role="footer">
 			<div data-role='controlgroup' data-type='horizontal'>
 				<a href='exit.php' data-role='button' data-ajax='false'>退出</a>
-				<a href='queryUnit.php' target='_blank' data-role='button' data-ajax='false'>单位转换</a>
-				<a href='index.php?action=help' data-role='button' data-ajax='false'>帮助</a>
-				<a href='index.php?action=lianxi' data-role='button' data-ajax='false'>联系我们</a>
 			</div>
 		</div>	
 	</div>

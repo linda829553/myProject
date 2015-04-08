@@ -21,6 +21,7 @@
 			if ($item->password==$password){
 				$_SESSION["loginSuccess"]=1;
                 $_SESSION["user_id"]=$item->user_id;
+                $_SESSION["mark"] = $item->mark;
                 // echo $_SESSION["loginSuccess"]."_1111";
                 // echo $_SESSION["user_id"]."__222222";
                 // return;

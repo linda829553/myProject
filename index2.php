@@ -12,16 +12,26 @@ require("header.php");
 			<h1>移动办公-养生协会</h1>
 		</div>
 		<div data-role="content">
-			<div>
+		<div data-role="collapsibleset" date-theme="a" data-inset="true">
+			<div data-role="collapsible" data-theme="a" data-content-theme="a">
+				<h2>系统管理</h2>
 				<ul data-role="listview">
-				    <li>Acura</li>
-				    <li>Audi</li>
-				    <li>BMW</li>
-				    <li>Cadillac</li>
-				    <li>Ferrari</li>
+					<li><a href="index.html">管理部门</a></li>
+					<li><a href="index.html">管理职位</a></li>
+					<li><a href="index.html">添加用户</a></li>
+					<li><a href="index.html">管理用户</a></li>
 				</ul>
-
 			</div>
+			<div data-role="collapsible" data-theme="a" data-content-theme="a">
+				<h2>消息管理</h2>
+				<ul data-role="listview">
+					<li><a href="index.html">消息管理</a></li>
+					<li><a href="index.html">发布消息</a></li>
+				</ul>
+			</div>
+		</div>
+		
+
 
 		</div>
 		<div data-role="footer">
