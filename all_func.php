@@ -2,8 +2,8 @@
 function show_menu($username){
 	require_once("user_class.php");
 	$user = new user;
-	$user->__set(username, $username);
-	$user = $user->query_one();
+	// $user->__set(username, $username);
+	$user = $user->query_one("username=$username");
 	// print("<pre>");
 	// print_r($user);
 	// print("</pre>");
@@ -119,7 +119,7 @@ function show_users(){
 	$arr_result = $dp -> query_all();
 	print("<ul data-role='listview'>");
 	foreach ($arr_result as $item) {
-		print("<li><a data-rel='dialog' data-transition='pop' href='index.php?action=show_users&id=" .$item->user_id. "'>".$item->username."</a></li>");
+		print("<li><a data-rel='dialog' data-transition='pop' href='index.php?action=show_one_user&id=" .$item->user_id. "'>".$item->username."</a></li>");
 	}
 
 	print("</ul>");
@@ -130,7 +130,11 @@ function show_users(){
 function show_one_user($id){
 	$name = "";
 	$id = trim($id);
+	$sex = 1;
 	if (empty($id)) { echo "发生错误！";exit;};
+
+	// echo $id . "---------------";
+	// exit;
 	require_once("department_class.php");
 	/* 部门初始化*/ 
 	$dp = new department;
@@ -142,24 +146,33 @@ function show_one_user($id){
 	/* init department_id*/
 	$department_id = 0;
 	if ($id != -1){
+		// echo $id . "---------------if";
+		// exit;
 		require_once("user_class.php");
 		$user = new user;
-		$user -> __set(id, $id);
-		$one_result = $user -> query_one();
-
-		$username = $one_result->user_name;
+		// $user -> __set(user_id, $id);
+		$one_result = $user -> query_one("user_id=$id");
+		// echo "<pre>";
+		// print_r($one_result);
+		// echo "</pre>";
+		// exit;
+		$username = $one_result->username;
 		$password = $one_result->password;
 		$mobile = $one_result->mobile;
 		$department_id = $one_result->department_id;
+		$sex = $one_result->sex;
+		$position = $one_result->position_name;
+		$remark = $one_result->remark;
 
 		print("<a rel=\"external\" href=\"javascript:deleteEntry_user($id)\">删除</a>");
 	}
-	print("<form action='index.php' method='post' rel='external' onsubmit='return checkForm();'>
+	print("<form action='index.php' id='AjaxForm1' method='post' rel='external'>
 			<input type='hidden' name='action' value='upsert_user'>
-			<input type='hidden' name='id' value='".$id."'>
+			<input type='hidden' name='id' id='user_id' value='".$id."'>
+			<input type='hidden' name='department_id'  value='".$department_id."'>
 			<fieldset>
 			<div class='ui-field-contain'>
-				<label for='username'>用户名：</label>
+				<label for='username' id='hint'>用户名：</label>
 				<input type='text' id='username' name='username' placeholder='用户名' value='".$username."'>
 			</div>
 			<div class='ui-field-contain'>
@@ -167,11 +180,15 @@ function show_one_user($id){
 				<input type='text' id='password' name='password' placeholder='密  码' value='".$password."'>
 			</div>
 
-				<fieldset data-role='controlgroup'>
+				<fieldset data-role='controlgroup' data-type='horizontal'>
 					<legend>性  别:</legend>
-					<input type='radio' name='sex' id='radio-choice-1' value='1' checked='checked'>
+					<input type='radio' name='sex' id='radio-choice-1' value='1' ");
+	if ($sex == 1) {print("checked='checked'");}
+	print(">
 					<label for='radio-choice-1'>男</label>
-					<input type='radio' name='sex' id='radio-choice-2' value='0'>
+					<input type='radio' name='sex' id='radio-choice-2' value='0' ");
+	if ($sex == 0) {print("checked='checked'");}
+	print(">
 					<label for='radio-choice-2'>女</label>
 				</fieldset>
 
@@ -180,10 +197,11 @@ function show_one_user($id){
 				<input type='text' id='moblie' name='mobile' placeholder='手机号码' value='".$mobile."'>
 			</div>
 			
-			<label for='select-choice-1' class='select'>部  门</label>
-			<select name='department' id='select-choice-1'>");
+			<label for='select-department' class='select'>部  门</label>
+			<select name='department_id' id='select-department'>
+			<option value='-1'>-请选择-</option>");
 	foreach ($arr_results as $item){
-		print("<option ");
+		print("<option value='".$item->id."'");
 		if ($item->id == $department_id) {
 			print("selected='selected'");
 		}
@@ -195,11 +213,115 @@ function show_one_user($id){
 	print("
 			</select>
 
+			<div class='ui-field-contain'>
+				<label for='position'>职  位：</label>
+				<input type='text' id='position' name='position' placeholder='职位信息' value='".$position."'>
+			</div>
+
+			<div class='ui-field-contain'>
+				<label for='remark'>备  注：</label>
+				<input type='text' id='remark' name='remark' placeholder='备注信息' value='".$remark."'>
+			</div>
+
 			</fieldset>
-			<button type='submit' value='Save'>保 存</button>
+			<button type='submit' id='submit2' value='Save'>保 存</button>
 		</form>\n");
+	print("
+		<script>
+			$(document).ready(function() {  
+					    $('#submit2').click(function(){  
+
+						    try {
+								if ($.trim($('#username').val()) == '') {
+									alert('请填写用户名称!');
+									return false;
+								} else if ($.trim($('#password').val()) == '') {
+									alert('请填写用户密码!');
+									return false;
+								} 
+							} catch (e) {
+								alert(e);
+								return false;
+							}
+
+							function onSuccess(data, status)  
+					        {  
+					            data = $.trim(data); 
+					            if (data) {
+					            	if (!$('#hint b').length) {
+										$('#hint').append('<b style=color:red>重</b>');
+					            	}
+									
+					            } else {
+					 				$('#AjaxForm1').submit();
+					            }
+					            
+					        }  
+					    
+					        function onError(data, status)  
+					        {  
+					            // handle an error  
+					        }       
+
+					        var formData = 'username=' + $('#AjaxForm1 #username').val() + '&'
+					        			   + 'user_id=' + $('#user_id').val();  
+
+					        $.ajax({  
+					            type: 'POST',  
+					            url: 'ajax_form_username.php',  
+					            cache: false,  
+					            data: formData,
+					            success: onSuccess,  
+					            error: onError  
+					        });
+
+							return false;
+
+							
+
+					    });  
+					});  
+		</script>
+		
+	");
 }
 
 
+/* 添加用户 */
+function add_user($name, $password, $department_id, $position, $sex, $mobile, $remark){
+		require_once("user_class.php");
+		$user = new user;
+		$user -> __set(username, $name);
+		$user -> __set(password, $password);
+		$user -> __set(department_id, $department_id);
+		$user -> __set(position_name, $position);
+		$user -> __set(sex, $sex);
+		$user -> __set(mobile, $mobile);
+		$user -> __set(remark, $remark);
+		$user -> add_new();
+}
 
+/* 编辑用户 */
+function update_user($id, $name, $password, $department_id, $position, $sex, $mobile, $remark){
+		require_once("user_class.php");
+		$user = new user;
+		$user -> __set(user_id, $id);
+		$user -> __set(username, $name);
+		$user -> __set(password, $password);
+		$user -> __set(department_id, $department_id);
+		$user -> __set(position_name, $position);
+		$user -> __set(sex, $sex);
+		$user -> __set(mobile, $mobile);
+		$user -> __set(remark, $remark);
+		$user -> update_user();
+}
+
+/* 删除用户 */
+
+function kill_user($id){
+		require_once("user_class.php");
+		$user = new user;
+		$user -> __set(user_id, $id);
+		$user -> delete();
+}
 ?>

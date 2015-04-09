@@ -9,7 +9,7 @@ require("header.php");
 
 	<div data-role="page">
 		<div data-role="header">
-			<h1>移动办公-养生协会</h1>
+			<h1>移动办公-养生协会</h1>	
 		</div>
 		<div data-role="content">
 		<div data-role="collapsibleset" date-theme="a" data-inset="true">

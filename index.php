@@ -47,13 +47,15 @@ require("header.php");
 						show_users();
 					} else if ($action == "add_user") {
 						show_one_user(-1);		
-					} else if ($action == "show_details") {
+					} else if ($action == "show_one_user") {
 						show_one_user($_REQUEST['id']);
-					} else if ($action == "upsert") {
+					} else if ($action == "upsert_user") {
 						if ($_REQUEST['id'] == -1) {
-							add_user($_REQUEST['user']);
+							add_user($_REQUEST['username'], $_REQUEST['password'], $_REQUEST['department_id'], 
+								$_REQUEST['position'], $_REQUEST['sex'], $_REQUEST['mobile'], $_REQUEST['remark']);
 						} else {
-							update_user($_REQUEST['id'], $_REQUEST['user']);
+							update_user($_REQUEST['id'], $_REQUEST['username'], $_REQUEST['password'], $_REQUEST['department_id'], 
+								$_REQUEST['position'], $_REQUEST['sex'], $_REQUEST['mobile'], $_REQUEST['remark']);
 						}
 						show_users();
 					} else if ($action == "delete_user") {

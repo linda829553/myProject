@@ -16,7 +16,7 @@
 
 	// 对于老用户
 	if($rows!=0){
-		$all_user=$user->query();
+		$all_user=$user->query_all();
 		foreach ($all_user as $item) {
 			if ($item->password==$password){
 				$_SESSION["loginSuccess"]=1;

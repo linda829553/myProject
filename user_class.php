@@ -5,6 +5,11 @@
 		private $user_id;
 		private $username;
 		private $password;
+		private $department_id;
+		private $position_name;
+		private $sex;
+		private $mobile;
+		private $remark;
 
 		// 方法
 		// __get(): 获取属性值
@@ -61,21 +66,49 @@
 
  		}
 
- 		function add(){
- 			$sql="INSERT INTO user (username,password)";
- 			$sql.=" VALUES('$this->username','$this->password')";
+ 		function add_new(){
+ 			$sql="INSERT INTO user (username, password, department_id, position_name, sex, mobile, remark)";
+ 			$sql.=" VALUES('$this->username', '$this->password', $this->department_id, '$this->position_name', 
+ 				$this->sex, '$this->mobile', '$this->remark')";
             // echo $sql;
  			$db=new database;
  			$db->execute($sql);
  			$db=null;
  		}
 
- 		function query_one(){
- 			$sql = "SELECT * FROM user ";
- 			$sql .= "WHERE username='$this->username'";
+ 		function query_one($condition){
+ 			if (($condition=="") || ($condition==NULL)) $condition="";
+ 			else $condition="where ".$condition;
+ 			$sql = "SELECT * FROM user ". $condition;
  			$db = new database;
  			$line = $db -> executeSFOR($sql);
  			return $line;
  		}
+
+ 		function update_user(){
+ 			$sql="UPDATE user  SET username='$this->username', password='$this->password', department_id=$this->department_id, 
+ 			position_name='$this->position_name', sex=$this->sex, mobile='$this->mobile', remark='$this->remark'";
+ 			$sql.=" WHERE user_id=$this->user_id";
+            // echo $sql;
+ 			$db=new database;
+ 			$db->execute($sql);
+ 			$db=null;
+ 		}
+
+ 		function delete(){
+ 			$sql="DELETE FROM user";
+ 			$sql.=" WHERE user_id=$this->user_id";
+            // echo $sql;
+ 			$db=new database;
+ 			$db->execute($sql);
+ 			$db=null;
+ 		}
+
+ 		// function is_a_repeat_name(){
+ 		// 	$rows = self::queryRows();
+ 		// 	if ($rows != 0) {
+ 		// 		return $rows;
+ 		// 	}
+ 		// }
 	}
 ?>
