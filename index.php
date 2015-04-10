@@ -62,6 +62,32 @@ require("header.php");
 						kill_user($_REQUEST['id']);
 						show_users();
 						/* 用户管理 end */
+						/* 信息管理 begin */
+					} else if ($action == "msg_manage"){
+						show_messages();
+					} else if ($action == "add_msg") {
+						show_one_msg(-1);		
+					} else if ($action == "show_one_msg") {
+						show_one_msg($_REQUEST['id']);
+					} else if ($action == "upsert_msg") {
+							// print("<pre>");
+							// print_r($_POST);
+							// print("</pre>");
+							// print($_REQUEST['content'].'22222222222');
+							// exit;
+						if ($_REQUEST['id'] == -1) {
+							// print($_REQUEST['content'].'@@@@@@@@@@@');
+							// exit;
+							/* 	id	content	post_time	depart_id	user_id	parent_id */
+							add_msg($_REQUEST['content'], $_REQUEST['department_id'], $_REQUEST['user_id']);
+						} else {
+							update_msg($_REQUEST['id'], $_REQUEST['content'], $_REQUEST['department_id'], $_REQUEST['user_id']);
+						}
+						show_messages();
+					} else if ($action == "delete_msg") {
+						kill_msg($_REQUEST['id']);
+						show_messages();
+						/* 信息管理 end */
 					} else {
 
 						show_menu($username_S);

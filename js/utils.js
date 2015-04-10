@@ -39,6 +39,21 @@ function deleteEntry_user(id) {
 
 }
 
+
+function deleteEntry_msg(id) {
+	try {
+		var confirmString = "删除这个消息.  确定吗?\n" + $.trim($('#content').val());
+		if (window.confirm(confirmString)) {
+			window.location="index.php?action=delete_msg&id=" + id;
+		}
+	} catch (e) {
+		alert(e);
+		return false;
+	}
+	return true;
+
+}
+
 // function checkForm_user() {
 // 	try {
 // 		if ($.trim($('#username').val()) == "") {

@@ -23,18 +23,13 @@ function show_menu($username){
 						<li><a href='?action=department'>管理部门</a></li>
 					</ul>
 				</div>
-				<div data-role='collapsible' data-theme='a' data-content-theme='a'>
-					<h2>消息管理</h2>
-					<ul data-role='listview'>
-						<li><a href='index.html'>消息管理</a></li>
-						<li><a href='index.html'>发布消息</a></li>
-					</ul>
-				</div>
-			</div>");
+			</div>
+			<ul data-role='listview' data-inset='true'>
+				<li><a href='index.php?action=msg_manage'>消息管理</a></li>
+			</ul>");
 	} else {
 		print("<ul data-role='listview' data-inset='true'>
 				<li><a href='#'>查看消息</a></li>
-				<li><a href='#'>发布消息</a></li>
 			</ul>");
 	}
 }
@@ -323,5 +318,222 @@ function kill_user($id){
 		$user = new user;
 		$user -> __set(user_id, $id);
 		$user -> delete();
+}
+
+/******************************* 消息管理 *****************************************/
+
+// function show_messages(){
+// 	require_once("msg_class.php");
+// 	print("<a data-rel='dialog' data-transition='pop' href='index.php?action=add_msg'>发布消息</a><br/><br/>");
+// 	// <p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
+// 	// <p class="ui-li-aside"><strong>6:24</strong>PM</p>
+// 	$msg = new message;
+// 	$arr_result = $msg -> query_all();
+// 	print("<ul data-role='listview'>");
+// 	foreach ($arr_result as $item) {
+// 		print("<li><a data-rel='dialog' data-transition='pop' href='index.php?action=show_one_msg&id=" .$item->id. "'>
+// 			<h3>".$item->content."</h3>
+// 			<p class='ui-li-aside'><strong>6:24</strong>PM</p>
+// 			</a></li>");
+// 	}
+
+// 	print("</ul>");
+// }
+
+function show_messages(){
+	require_once("department_class.php");
+	require_once("msg_class.php");
+	$dp = new department;
+	$arr_departs = $dp -> query_all();
+	print("<form action='index.php' id='AjaxForm_depart' method='post' rel='external'>
+			<div class='ui-field-contain'>
+			<label for='select-department' class='select'>按部门查看:</label>
+			<select name='department_id' id='select-department'>
+			<option value='-1'>-请选择-</option>");
+
+	foreach ($arr_departs as $dp_item) {
+		print("<option value='".$dp_item->id."'");
+		print(">" .$dp_item->department_name);
+		print("</option>");
+	}
+
+	print("
+			</select>
+			</div>
+		</form>\n");
+
+	print("<a data-rel='dialog' data-transition='pop' href='index.php?action=add_msg'>发布消息</a><br/>");
+	// <p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
+	// <p class="ui-li-aside"><strong>6:24</strong>PM</p>
+
+	$msg = new message;
+	$arr_result = $msg -> query_by_date();
+	print("<ul data-role='listview' data-inset='true'>");
+	date_default_timezone_set("Asia/Shanghai");
+	foreach ($arr_result as $item) {
+		print("<li data-role='list-divider'>$item->days<span class='ui-li-count'>$item->COUNT</span></li>");
+		$arr_day_result = $msg -> query_one_date($item->days);
+		foreach ($arr_day_result as $item2) {
+			$depart_name = $msg->get_departname($item2->depart_id);
+			if (empty($depart_name)) {$depart_name = '全部';}
+			print("<li><a data-rel='dialog' data-transition='pop' href='index.php?action=show_one_msg&id=" .$item2->id. "'>
+							<p>".$depart_name."</p>
+							<h3>".$item2->content."</h3>						
+							<p class='ui-li-aside'><strong>".date('h:i:sA', $item2->post_time)."</strong></p>
+							</a></li>");
+		}
+			
+	}
+
+	print("</ul>");
+	print("
+		<script>
+			$(document).ready(function() {  
+					    $('#select-department').change(function(){  
+							alert('改变了');
+						 //    try {
+							// 	if ($.trim($('#content').val()) == '') {
+							// 		alert('请填写消息内容!');
+							// 		return false;
+							// 	}
+							// } catch (e) {
+							// 	alert(e);
+							// 	return false;
+							// }
+
+					    });  
+					});  
+		</script>
+		
+	");
+}
+
+/*添加消息表单显示*/
+function show_one_msg($id){
+	// session_start();
+	$user_id = $_SESSION['user_id'];
+	// echo $user_id . "---------------";
+	// exit;
+	$name = "";
+	$id = trim($id);
+	$sex = 1;
+	if (empty($id)) { echo "发生错误！";exit;};
+
+	// echo $id . "---------------";
+	// exit;
+	require_once("department_class.php");
+	/* 部门初始化*/ 
+	$dp = new department;
+	$arr_results = $dp -> query_all();
+	// echo "<pre>";
+	// print_r($arr_results);
+	// echo "</pre>";
+	// exit;
+	/* init department_id*/
+	$department_id = 0;
+	if ($id != -1){
+		// echo $id . "---------------if";
+		// exit;
+		require_once("msg_class.php");
+		$msg = new message;
+		// $user -> __set(user_id, $id);
+		$one_result = $msg -> query_one("id=$id");
+		// echo "<pre>";
+		// print_r($one_result);
+		// echo "</pre>";
+		// exit;
+		$content = $one_result->content;
+		$post_time = $one_result->post_time;
+		$depart_id = $one_result->depart_id;
+		$user_id = $one_result->user_id;
+
+
+		print("<a rel=\"external\" href=\"javascript:deleteEntry_msg($id)\">删除</a>");
+	}
+	print("<form action='index.php' id='AjaxForm2' method='post' rel='external'>
+			<input type='hidden' name='action' value='upsert_msg'>
+			<input type='hidden' name='id' id='msg_id' value='".$id."'>
+			<input type='hidden' name='user_id'  value='".$user_id."'>
+			<fieldset>
+			<div class='ui-field-contain'>
+				<label for='content' id='hint'>消  息:</label>
+				<textarea cols='40' rows='20' name='content' id='content'>".$content."</textarea>
+			</div>
+
+			
+			<label for='select-department' class='select'>部  门:</label>
+			<select name='department_id' id='select-department'>
+			<option value='-1'>-请选择-</option>");
+	foreach ($arr_results as $item){
+		print("<option value='".$item->id."'");
+		if ($item->id == $depart_id) {
+			print("selected='selected'");
+		}
+		print(">" .$item->department_name);
+		print("</option>");
+
+	}
+
+	print("
+			</select>
+
+			</fieldset>
+			<button type='submit' id='submit3' value='Save'>发  布</button>
+		</form>\n");
+	print("
+		<script>
+			$(document).ready(function() {  
+					    $('#submit3').click(function(){  
+
+						    try {
+								if ($.trim($('#content').val()) == '') {
+									alert('请填写消息内容!');
+									return false;
+								}
+							} catch (e) {
+								alert(e);
+								return false;
+							}
+
+					    });  
+					});  
+		</script>
+		
+	");
+}
+
+
+
+/* 添加消息 */
+	/** id	content	post_time	depart_id	user_id	parent_id **/
+function add_msg($content, $department_id, $user_id){
+		require_once("msg_class.php");
+		$msg = new message;
+		$msg -> __set(content, $content);
+		$msg -> __set(post_time, time());
+		$msg -> __set(depart_id, $department_id);
+		$msg -> __set(user_id, $user_id);
+		$msg -> add_new();
+}
+
+/* 编辑信息 */
+function update_msg($id, $content, $department_id, $user_id){
+		require_once("msg_class.php");
+		$msg = new message;
+		$msg -> __set(id, $id);
+		$msg -> __set(content, $content);
+		$msg -> __set(post_time, time());
+		$msg -> __set(depart_id, $department_id);
+		$msg -> __set(user_id, $user_id);
+		$msg -> update();
+}
+
+/* 删除信息 */
+
+function kill_msg($id){
+		require_once("msg_class.php");
+		$msg = new message;
+		$msg -> __set(id, $id);
+		$msg -> delete();
 }
 ?>
