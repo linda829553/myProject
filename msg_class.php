@@ -1,6 +1,6 @@
 <?php
 require_once("class_database.php");
-require_once("department_class.php");
+// require_once("department_class.php");
 class message
 {
 	private $id;
@@ -100,6 +100,15 @@ class message
 		$dp -> __set(id, $id);
 		$one_result = $dp ->query_one();
 		return $one_result->department_name;
+	}
+
+	function query_by_depart(){
+		$sql="SELECT * FROM message WHERE depart_id=$this->depart_id";
+		$sql .= " ORDER BY post_time DESC";
+		$db=new database;
+		$msg=$db->query($sql);
+		$db=null;
+		return $msg;
 	}
 }
 

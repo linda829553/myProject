@@ -5,7 +5,8 @@
 	$_SESSION["username"]=checkinput(trim($_REQUEST["username"]), 3, "用户名");
 	$password=checkinput(trim($_REQUEST["password"]), 6, "密码");
 	$username_S=$_SESSION["username"];
-
+	// echo $password;
+	// exit;
 	
 	require_once("user_class.php");
 	$user=new user;
@@ -16,9 +17,7 @@
 
 	// 对于老用户
 	if($rows!=0){
-		$all_user=$user->query_all();
-		foreach ($all_user as $item) {
-			if ($item->password==$password){
+		
 				$_SESSION["loginSuccess"]=1;
                 $_SESSION["user_id"]=$item->user_id;
                 $_SESSION["mark"] = $item->mark;
@@ -26,11 +25,7 @@
                 // echo $_SESSION["user_id"]."__222222";
                 // return;
                 echo "<script>location='index.php';</script>";
-			} else {
-				echo "<script>alert('你输入的密码错误!');</script>";
-       			echo "<script>location='index.php';</script>";
-			}
-		}
+		
         //require("relogin.php");
 	}
 
@@ -43,8 +38,8 @@
   //       // return;
 		// $user=null;
 		// $_SESSION["loginSuccess"]=1;
-        echo "<script>alert('你输入的用户名,密码错误!');</script>";
-        echo "<script>location='index.php';</script>";
+        echo "<script>alert('你输入的用户名或密码错误!');</script>";
+        echo "<script>location='login.php';</script>";
         exit;
 	}
 	// $user=null;

@@ -39,7 +39,7 @@
 
  		function queryRows(){
  			$sql="SELECT * FROM user ";
- 			$sql.="where username='$this->username'";
+ 			$sql.="where username='$this->username' and password='$this->password'";
             // echo $sql;
  			$db=new database;
  			$rows=$db->queryRows($sql);

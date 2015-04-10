@@ -8,7 +8,7 @@ require("header.php");
 
 ?>
 
-	<div data-role="page">
+	<div data-role="page" id="page1">
 		<div data-role="header">
 			<h1>移动办公-养生协会</h1>
 		</div>
@@ -93,10 +93,11 @@ require("header.php");
 						show_menu($username_S);
 					}
 				} else {
+					/*************************普通用户模块********************************************/
 					if ($action == "show_msg"){
 						show_msg();
 					}else{
-						show_menu($username_S);
+						show_user_msg($username_S);
 					}
 				}
 

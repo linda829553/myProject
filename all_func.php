@@ -27,10 +27,10 @@ function show_menu($username){
 			<ul data-role='listview' data-inset='true'>
 				<li><a href='index.php?action=msg_manage'>消息管理</a></li>
 			</ul>");
-	} else {
-		print("<ul data-role='listview' data-inset='true'>
-				<li><a href='#'>查看消息</a></li>
-			</ul>");
+	// } else {
+	// 	print("<ul data-role='listview' data-inset='true'>
+	// 			<li><a href='#'>查看消息</a></li>
+	// 		</ul>");
 	}
 }
 
@@ -345,7 +345,7 @@ function show_messages(){
 	require_once("msg_class.php");
 	$dp = new department;
 	$arr_departs = $dp -> query_all();
-	print("<form action='index.php' id='AjaxForm_depart' method='post' rel='external'>
+	print("<form action='index.php' id='AjaxForm_depart' method='post' rel='external' data-ajax='false'>
 			<div class='ui-field-contain'>
 			<label for='select-department' class='select'>按部门查看:</label>
 			<select name='department_id' id='select-department'>
@@ -368,7 +368,7 @@ function show_messages(){
 
 	$msg = new message;
 	$arr_result = $msg -> query_by_date();
-	print("<ul data-role='listview' data-inset='true'>");
+	print("<ul id='list_date' data-role='listview' data-inset='true'>");
 	date_default_timezone_set("Asia/Shanghai");
 	foreach ($arr_result as $item) {
 		print("<li data-role='list-divider'>$item->days<span class='ui-li-count'>$item->COUNT</span></li>");
@@ -388,24 +388,59 @@ function show_messages(){
 	print("</ul>");
 	print("
 		<script>
+			// 内联页面强制刷新
+			// $.mobile.changePage(page1, {
+			//  'reloadPage' : true,
+			// });
+			
 			$(document).ready(function() {  
 					    $('#select-department').change(function(){  
-							alert('改变了');
-						 //    try {
-							// 	if ($.trim($('#content').val()) == '') {
-							// 		alert('请填写消息内容!');
-							// 		return false;
-							// 	}
-							// } catch (e) {
-							// 	alert(e);
-							// 	return false;
-							// }
+							// alert('改变了');
+							// $('#list_date').html('<li></li>');
+							function onSuccess(data, status)  
+					        {  
+					            data = $.trim(data); 
+					            // alert(data);
+					            // return;
+					            if (data) {
+					            	$('#list_date').html(data).listview('refresh');
+					            	// alert();
+					            	// $('#list_data').trigger('create');
+					            	// $('#list_data').listview();
+					            	// $('#list_data').listview('refresh');
+
+					            }
+					            
+					        }  
+					    
+					        function onError(data, status)  
+					        {  
+					            // handle an error  
+					        }       
+
+					        var formData = $('#AjaxForm_depart').serialize();
+							// alert(formData);
+					        $.ajax({  
+					            type: 'POST',  
+					            url: 'ajax_select_depart.php',  
+					            cache: false,  
+					            data: formData,
+					            success: onSuccess,  
+					            error: onError  
+					        });
+
+							return false;
 
 					    });  
 					});  
 		</script>
 		
 	");
+}
+
+/* 显示普通用户登录后的页面------------------------因为和管理员的信息管理页面比较类似就写到这里了*/
+function show_user_msg($username){
+	echo $username."string";
 }
 
 /*添加消息表单显示*/
