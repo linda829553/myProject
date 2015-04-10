@@ -17,10 +17,10 @@
 
 	// 对于老用户
 	if($rows!=0){
-		
+			$have_user = $user->query_id_mark();
 				$_SESSION["loginSuccess"]=1;
-                $_SESSION["user_id"]=$item->user_id;
-                $_SESSION["mark"] = $item->mark;
+                $_SESSION["user_id"]=$have_user->user_id;
+                $_SESSION["mark"] = $have_user->mark;
                 // echo $_SESSION["loginSuccess"]."_1111";
                 // echo $_SESSION["user_id"]."__222222";
                 // return;

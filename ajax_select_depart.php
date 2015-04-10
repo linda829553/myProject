@@ -1,6 +1,5 @@
 <?php
 	require_once("msg_class.php");
-	require_once("department_class.php");
 	$depart_id = $_POST['department_id'];
 
 	$msg = new message;

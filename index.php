@@ -94,8 +94,8 @@ require("header.php");
 					}
 				} else {
 					/*************************普通用户模块********************************************/
-					if ($action == "show_msg"){
-						show_msg();
+					if ($action == "show_one_user_msg"){
+						show_one_user_msg();
 					}else{
 						show_user_msg($username_S);
 					}

@@ -341,10 +341,9 @@ function kill_user($id){
 // }
 
 function show_messages(){
-	require_once("department_class.php");
 	require_once("msg_class.php");
-	$dp = new department;
-	$arr_departs = $dp -> query_all();
+	$msg = new message;
+	$arr_departs = $msg -> query_all_departs();
 	print("<form action='index.php' id='AjaxForm_depart' method='post' rel='external' data-ajax='false'>
 			<div class='ui-field-contain'>
 			<label for='select-department' class='select'>按部门查看:</label>
@@ -366,7 +365,7 @@ function show_messages(){
 	// <p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
 	// <p class="ui-li-aside"><strong>6:24</strong>PM</p>
 
-	$msg = new message;
+	
 	$arr_result = $msg -> query_by_date();
 	print("<ul id='list_date' data-role='listview' data-inset='true'>");
 	date_default_timezone_set("Asia/Shanghai");
@@ -440,7 +439,43 @@ function show_messages(){
 
 /* 显示普通用户登录后的页面------------------------因为和管理员的信息管理页面比较类似就写到这里了*/
 function show_user_msg($username){
-	echo $username."string";
+	require_once("msg_class.php");
+	$msg = new message;
+	// $arr_depart_result = $msg -> query_by_username($username);
+	// date_default_timezone_set("Asia/Shanghai");
+	// print("<ul id='list_date' data-role='listview' data-inset='true'>");
+	// foreach ($arr_depart_result as $item2) {
+	// 	print("<li><a data-rel='dialog' data-transition='pop' href='index.php?action=show_one_msg&id=" .$item2->id. "'>
+	// 						<p>".$msg->get_departname($item2->depart_id)."</p>
+	// 						<h3>".$item2->content."</h3>						
+	// 						<p class='ui-li-aside'><strong>".date('h:i:sA', $item2->post_time)."</strong></p>
+	// 						</a></li>");
+	// }
+	// print("</ul>");
+
+	$arr_result = $msg -> query_by_date_user($username);
+	print("<ul id='list_date' data-role='listview' data-inset='true'>");
+	date_default_timezone_set("Asia/Shanghai");
+	foreach ($arr_result as $item) {
+		print("<li data-role='list-divider'>$item->days<span class='ui-li-count'>$item->COUNT</span></li>");
+		$arr_day_result = $msg -> query_one_date_user($username, $item->days);
+		foreach ($arr_day_result as $item2) {
+			$depart_name = $msg->get_departname($item2->depart_id);
+			if (empty($depart_name)) {$depart_name = '全部';}
+			print("<li><a data-rel='dialog' data-transition='pop' href='index.php?action=show_one_user_msg&id=" .$item2->id. "'>
+							<p>".$depart_name."</p>
+							<h3>".$item2->content."</h3>						
+							<p class='ui-li-aside'><strong>".date('h:i:sA', $item2->post_time)."</strong></p>
+							</a></li>");
+		}
+			
+	}
+
+	print("</ul>");
+}
+
+function show_one_user_msg(){
+	
 }
 
 /*添加消息表单显示*/

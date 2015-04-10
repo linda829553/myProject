@@ -76,6 +76,31 @@ class message
 		return $msg;
 	}
 
+	function query_by_date_user($username){
+		$sql = "SELECT FROM_UNIXTIME(post_time,'%c月%d日') days,COUNT(id) COUNT FROM message ,user";
+		$sql .= " WHERE message.depart_id=user.department_id and user.username='$username'";
+		$sql .= " GROUP BY days DESC";
+		// echo $sql. "111111111111";
+		// exit;
+		$db=new database;
+		$msg=$db->query($sql);
+		$db=null;
+		return $msg;
+	}
+
+	function query_one_date_user($username, $days){
+		$sql = "SELECT * FROM message, user";
+		$sql .= " WHERE FROM_UNIXTIME(post_time,'%c月%d日') ='$days'";
+		$sql .= " AND message.depart_id=user.department_id and user.username='$username'";
+		$sql .= " ORDER BY post_time DESC";
+		// echo $sql. "222222222222";
+		// exit;
+		$db=new database;
+		$msg=$db->query($sql);
+		$db=null;
+		return $msg;
+	}
+
 	function update(){
 		// id	content	post_time	depart_id	user_id	parent_id
 		$sql="UPDATE message  SET content='$this->content', post_time=$this->post_time, depart_id=$this->depart_id, user_id=$this->user_id";
@@ -96,10 +121,11 @@ class message
 	}
 
 	function get_departname($id){
-		$dp = new department;
-		$dp -> __set(id, $id);
-		$one_result = $dp ->query_one();
-		return $one_result->department_name;
+		$sql="SELECT department_name FROM department WHERE id=".$id;
+		$db=new database;
+		$msg=$db->executeSFOR($sql);
+		$db=null;
+		return $msg->department_name;
 	}
 
 	function query_by_depart(){
@@ -109,6 +135,26 @@ class message
 		$msg=$db->query($sql);
 		$db=null;
 		return $msg;
+	}
+
+	function query_by_username($username){
+		$sql="SELECT * FROM message, user WHERE ";
+		$sql .= "message.depart_id=user.department_id and user.username=".$username;
+		$sql .= " ORDER BY post_time DESC";
+		// echo $sql;
+		// exit;
+		$db=new database;
+		$msg=$db->query($sql);
+		$db=null;
+		return $msg;
+	}
+
+	function query_all_departs(){
+		$sql="SELECT * FROM department";
+		$db=new database;
+		$arr_dps=$db->query($sql);
+		$db=null;
+		return $arr_dps;
 	}
 }
 

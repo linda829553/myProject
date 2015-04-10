@@ -85,6 +85,16 @@
  			return $line;
  		}
 
+ 		function query_id_mark(){
+ 			$sql="SELECT * FROM user ";
+ 			$sql.="where username='$this->username' and password='$this->password'";
+            // echo $sql;
+ 			$db=new database;
+ 			$rows=$db->executeSFOR($sql);
+ 			$db=mull;
+ 			return $rows;
+ 		}
+
  		function update_user(){
  			$sql="UPDATE user  SET username='$this->username', password='$this->password', department_id=$this->department_id, 
  			position_name='$this->position_name', sex=$this->sex, mobile='$this->mobile', remark='$this->remark'";
