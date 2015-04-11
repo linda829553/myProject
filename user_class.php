@@ -55,17 +55,6 @@
  			return $user;
  		}
 
- 		function queryId(){
- 			$sql="SELECT user_id FROM user ";
- 			$sql.="where username='$this->username'";
- 			$db=new database;
-            // echo $sql;
- 			$user_id=$db->executeSFOR($sql);
- 			$db=null;
- 			return $user_id->user_id;
-
- 		}
-
  		function add_new(){
  			$sql="INSERT INTO user (username, password, department_id, position_name, sex, mobile, remark)";
  			$sql.=" VALUES('$this->username', '$this->password', $this->department_id, '$this->position_name', 

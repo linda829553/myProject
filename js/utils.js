@@ -25,11 +25,11 @@ function deleteEntry_department(id) {
 
 }
 
-function deleteEntry_user(id) {
+function deleteEntry_msg(id) {
 	try {
-		var confirmString = "删除这个用户.  确定吗?\n" + $.trim($('#hint').val());
+		var confirmString = "删除这个消息.  确定吗?\n" + $.trim($('#content').val());
 		if (window.confirm(confirmString)) {
-			window.location="index.php?action=delete_user&id=" + id;
+			window.location="index.php?action=delete_msg&id=" + id;
 		}
 	} catch (e) {
 		alert(e);
@@ -40,12 +40,41 @@ function deleteEntry_user(id) {
 }
 
 
-function deleteEntry_msg(id) {
+function deleteEntry_user(id) {
+
 	try {
-		var confirmString = "删除这个消息.  确定吗?\n" + $.trim($('#content').val());
-		if (window.confirm(confirmString)) {
-			window.location="index.php?action=delete_msg&id=" + id;
+		
+		/* ajax 查询数据返回管理员标识*/
+		function onSuccess(data, status){
+			data = $.trim(data);
+			if (data == 1) {
+				alert("你不能删除管理员账户!");
+				return false;
+			} else {
+				var confirmString = "删除这个用户.  确定吗?\n" + $.trim($('#hint').val());
+				if (window.confirm(confirmString)) {
+					window.location="index.php?action=delete_user&id=" + id;
+				}
+			}
+			
 		}
+
+		function onError(data, status){
+
+		}
+
+		var query_str = 'user_id=' + id;
+
+		$.ajax({
+			type: 'POST',
+			url: 'ajax_query_mark.php',
+			cache: false,
+			data: query_str,
+			success: onSuccess,
+			error: onError
+		});
+
+		
 	} catch (e) {
 		alert(e);
 		return false;

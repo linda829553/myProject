@@ -59,7 +59,9 @@ require("header.php");
 						}
 						show_users();
 					} else if ($action == "delete_user") {
-						kill_user($_REQUEST['id']);
+						if (!is_manager($_REQUEST['id'])) {
+							kill_user($_REQUEST['id']);							
+						}
 						show_users();
 						/* 用户管理 end */
 						/* 信息管理 begin */
