@@ -80,6 +80,8 @@
  			if (($condition=="") || ($condition==NULL)) $condition="";
  			else $condition="where ".$condition;
  			$sql = "SELECT * FROM user ". $condition;
+ 			// echo $sql.'show_menu';
+ 			// exit;
  			$db = new database;
  			$line = $db -> executeSFOR($sql);
  			return $line;

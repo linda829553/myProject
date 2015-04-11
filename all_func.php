@@ -3,14 +3,14 @@ function show_menu($username){
 	require_once("user_class.php");
 	$user = new user;
 	// $user->__set(username, $username);
-	$user = $user->query_one("username=$username");
+	$one_result = $user->query_one("username='$username'");
 	// print("<pre>");
 	// print_r($user);
 	// print("</pre>");
 	// exit;
-	$group = $user->group_name;
-	$position = $user->position_name;
-	$mark = $user->mark;
+	$group = $one_result->group_name;
+	$position = $one_result->position_name;
+	$mark = $one_result->mark;
 
 	
 	print($username . $position . "您好!");
@@ -344,20 +344,25 @@ function show_messages(){
 	require_once("msg_class.php");
 	$msg = new message;
 	$arr_departs = $msg -> query_all_departs();
-	print("<form action='index.php' id='AjaxForm_depart' method='post' rel='external' data-ajax='false'>
-			<div class='ui-field-contain'>
-			<label for='select-department' class='select'>按部门查看:</label>
-			<select name='department_id' id='select-department'>
-			<option value='-1'>-请选择-</option>");
+	print("<form action='index.php' id='AjaxForm_depart' method='post' rel='external' data-ajax='false' onsubmit='return post_response();'>
+			<div class='ui-grid-a'>
+				<div class='ui-block-a'>
+				<select name='department_id' id='select-department'>
+				<option value='-1'>-请选择部门-</option>");
 
-	foreach ($arr_departs as $dp_item) {
-		print("<option value='".$dp_item->id."'");
-		print(">" .$dp_item->department_name);
-		print("</option>");
-	}
+				foreach ($arr_departs as $dp_item) {
+					print("<option value='".$dp_item->id."'");
+					print(">" .$dp_item->department_name);
+					print("</option>");
+				}
 
-	print("
-			</select>
+				print("
+				</select>
+				</div>
+			
+				<div class='ui-block-b'>
+					<button type='submit' id='submit_select_menu' value='Save'>查 询</button>
+				</div>
 			</div>
 		</form>\n");
 
@@ -365,7 +370,6 @@ function show_messages(){
 	// <p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
 	// <p class="ui-li-aside"><strong>6:24</strong>PM</p>
 
-	
 	$arr_result = $msg -> query_by_date();
 	print("<ul id='list_date' data-role='listview' data-inset='true'>");
 	date_default_timezone_set("Asia/Shanghai");
@@ -391,47 +395,56 @@ function show_messages(){
 			// $.mobile.changePage(page1, {
 			//  'reloadPage' : true,
 			// });
+
+			function post_response(){
+				// alert('改变了');
+				// $('#list_date').html('<li></li>');
+				function onSuccess(data, status)  
+		        {  
+		            data = $.trim(data); 
+		            // alert(data);
+		            // return;
+		            if (data) {
+		            	$('#list_date').html(data).listview('refresh');
+		            	// alert();
+		            	// $('#list_data').trigger('create');
+		            	// $('#list_data').listview();
+		            	// $('#list_data').listview('refresh');
+
+		            }
+		            
+		        }  
+		    
+		        function onError(data, status)  
+		        {  
+		            // handle an error  
+		        }       
+
+		        var formData = $('#AjaxForm_depart').serialize();
+				// alert(formData);
+		        $.ajax({  
+		            type: 'POST',  
+		            url: 'ajax_select_depart.php',  
+		            cache: false,  
+		            data: formData,
+		            success: onSuccess,  
+		            error: onError  
+		        });
+
+				return false;
+			}
 			
 			$(document).ready(function() {  
-					    $('#select-department').change(function(){  
-							// alert('改变了');
-							// $('#list_date').html('<li></li>');
-							function onSuccess(data, status)  
-					        {  
-					            data = $.trim(data); 
-					            // alert(data);
-					            // return;
-					            if (data) {
-					            	$('#list_date').html(data).listview('refresh');
-					            	// alert();
-					            	// $('#list_data').trigger('create');
-					            	// $('#list_data').listview();
-					            	// $('#list_data').listview('refresh');
+				/* change 事件不成功的时候，可以提交*/
+				// $('#submit_select_menu').click(function(){
+				// 	alert(222222);
+				// 	 	post_response();
+				// });
+			    $('#select-department').change(function(){  
+						post_response();
 
-					            }
-					            
-					        }  
-					    
-					        function onError(data, status)  
-					        {  
-					            // handle an error  
-					        }       
-
-					        var formData = $('#AjaxForm_depart').serialize();
-							// alert(formData);
-					        $.ajax({  
-					            type: 'POST',  
-					            url: 'ajax_select_depart.php',  
-					            cache: false,  
-					            data: formData,
-					            success: onSuccess,  
-					            error: onError  
-					        });
-
-							return false;
-
-					    });  
-					});  
+			    });  
+			});  
 		</script>
 		
 	");
@@ -474,8 +487,18 @@ function show_user_msg($username){
 	print("</ul>");
 }
 
-function show_one_user_msg(){
-	
+function show_one_user_msg($id){
+	require_once("msg_class.php");
+	$msg = new message;
+	$msg -> __set(id, $id);
+	$cond = 'id='.$id;
+	$one_msg = $msg -> query_one($cond);
+	print("
+		<div class='ui-field-contain'>
+			<label for='textarea-10'>查看消息：</label>
+			<textarea readonly cols='40' rows='20' name='textarea-10' id='textarea-10'>$one_msg->content</textarea>
+		</div>
+		");
 }
 
 /*添加消息表单显示*/

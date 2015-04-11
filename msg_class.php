@@ -101,6 +101,29 @@ class message
 		return $msg;
 	}
 
+	/* 根据部门查询日期分组显示*/
+	function query_by_date_depart($depart_id){
+		$sql="SELECT FROM_UNIXTIME(post_time,'%c月%d日') days,COUNT(id) COUNT FROM message";
+		$sql .= " WHERE depart_id=$depart_id";
+		$sql .= " GROUP BY days DESC";
+		$db=new database;
+		$msg=$db->query($sql);
+		$db=null;
+		return $msg;
+	}
+
+	function query_one_date_depart($depart_id, $days){
+		$sql="SELECT * FROM message";
+		$sql .= " WHERE FROM_UNIXTIME(post_time,'%c月%d日') ='".$days."' AND depart_id=$depart_id";
+		$sql .= " ORDER BY post_time DESC";
+		// echo $sql;
+		// exit;
+		$db=new database;
+		$msg=$db->query($sql);
+		$db=null;
+		return $msg;
+	}
+
 	function update(){
 		// id	content	post_time	depart_id	user_id	parent_id
 		$sql="UPDATE message  SET content='$this->content', post_time=$this->post_time, depart_id=$this->depart_id, user_id=$this->user_id";
