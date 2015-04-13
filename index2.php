@@ -1,35 +1,30 @@
 <?php
 session_start();
 error_reporting(E_ALL ^ E_DEPRECATED ^ E_NOTICE);
-require("class_database.php");
-require("all_func.php");
 require("header.php");
-
+	// echo "loginSuccess: ".$_SESSION["loginSuccess"];				// 测试
+if(!isset($_SESSION["loginSuccess"])){
+	// echo "loginSuccess: ".$_SESSION["loginSuccess"];				// 测试
+	echo "<script>location='login.php';</script>";
+}
 ?>
 
 	<div data-role="page">
 		<div data-role="header">
-			<h1>移动办公-养生协会</h1>	
+			<h1>短信群发</h1>	
 		</div>
 		<div data-role="content">
-		<div data-role="collapsibleset" date-theme="a" data-inset="true">
-			<div data-role="collapsible" data-theme="a" data-content-theme="a">
-				<h2>系统管理</h2>
-				<ul data-role="listview">
-					<li><a href="index.html">管理部门</a></li>
-					<li><a href="index.html">管理职位</a></li>
-					<li><a href="index.html">添加用户</a></li>
-					<li><a href="index.html">管理用户</a></li>
-				</ul>
+		<form action="send.php" method="post"  data-ajax="false" onsubmit="return checkForm(this)">
+			<div data-role="ui-field-contain">
+				<label for="textarea-1">手机号:(多个手机号可用逗号隔开)</label>
+				<textarea name="telphone" id="textarea-1"></textarea>
 			</div>
-			<div data-role="collapsible" data-theme="a" data-content-theme="a">
-				<h2>消息管理</h2>
-				<ul data-role="listview">
-					<li><a href="index.html">消息管理</a></li>
-					<li><a href="index.html">发布消息</a></li>
-				</ul>
+			<div data-role="ui-field-contain">
+				<label for="textarea-2">短信内容:</label>
+				<textarea name="content" id="textarea-2"></textarea>
 			</div>
-		</div>
+			<button type="submit" name="submit" value="Send">发 送</button>
+		</form>
 		
 
 
@@ -37,12 +32,28 @@ require("header.php");
 		<div data-role="footer">
 			<div data-role='controlgroup' data-type='horizontal'>
 				<a href='exit.php' data-role='button' data-ajax='false'>退出</a>
-				<a href='queryUnit.php' target='_blank' data-role='button' data-ajax='false'>单位转换</a>
-				<a href='index.php?action=help' data-role='button' data-ajax='false'>帮助</a>
-				<a href='index.php?action=lianxi' data-role='button' data-ajax='false'>联系我们</a>
 			</div>
 		</div>	
 	</div>
 	
 </body>
+
+<script>
+function checkForm() {
+	try {
+		if ($.trim($('#textarea-1').val()) == "") {
+				alert("请填写手机号码!");
+				return false;
+			}
+		if ($.trim($('#textarea-2').val()) == "") {
+				alert("请填写发送内容!");
+				return false;
+			}
+	} catch (e) {
+		alert(e);
+		return false;
+	}
+	return true;
+}
+</script>
 </html>

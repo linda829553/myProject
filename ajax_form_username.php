@@ -1,11 +1,14 @@
 <?php  
 	require_once("user_class.php");
-    $username = $_POST['username'];  
-    $user_id = $_POST['user_id'];
+    $username = $_REQUEST['username'];  
+    $user_id = $_REQUEST['user_id'];
+    // echo $username;
+    // echo $user_id;
+    // exit;
 
     $user = new user;
     $user -> __set(username, $username);
-    $rows = $user->queryRows();
+    $rows = $user->queryRowsOfUsername();
     if ($user_id == -1) {
     	if ($rows != 0) { 
     		echo $rows;

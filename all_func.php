@@ -13,7 +13,7 @@ function show_menu($username){
 	$mark = $one_result->mark;
 
 	
-	print($username . $position . "您好!");
+	print($username .",". $position . " 您好!");
 	if ($mark == 1){
 		print("<div data-role='collapsibleset' date-theme='a' data-inset='true'>
 				<div data-role='collapsible' data-theme='a' data-content-theme='a'>
@@ -41,11 +41,12 @@ function show_userlist(){
 /***************************** 部门管理页 *********************************/
 function show_departments(){
 	require_once("department_class.php");
-	print("<a data-rel='dialog' data-transition='pop' href='index.php?action=add_department'>添加部门</a><br/><br/>");
+	print("<a href='index.php'>返回</a>&nbsp;&nbsp;");
+	print("<a data-rel='dialog' data-transition='pop' href='index.php?action=add_department'>添加部门</a><br/>");
 
 	$dp = new department;
 	$arr_result = $dp -> query_all();
-	print("<ul data-role='listview'>");
+	print("<ul data-role='listview' data-inset='true'>");
 	foreach ($arr_result as $item) {
 		print("<li><a data-rel='dialog' data-transition='pop' href='index.php?action=show_details&id=" .$item->id. "'>".$item->department_name."</a></li>");
 	}
@@ -108,13 +109,21 @@ function kill_department($id){
 /********************用户管理页 ******************************/
 function show_users(){
 	require_once("user_class.php");
+	print("<a href='index.php'>返回</a>&nbsp;&nbsp;");
 	print("<a data-rel='dialog' data-transition='pop' href='index.php?action=add_user'>添加用户</a><br/><br/>");
 
 	$dp = new user;
 	$arr_result = $dp -> query_all();
-	print("<ul data-role='listview'>");
+	print("<ul data-role='listview' data-inset='true'>");
 	foreach ($arr_result as $item) {
-		print("<li><a data-rel='dialog' data-transition='pop' href='index.php?action=show_one_user&id=" .$item->user_id. "'>".$item->username."</a></li>");
+		print("<li><a data-rel='dialog' data-transition='pop' href='index.php?action=show_one_user&id=" .$item->user_id. "'>");
+		if ($item->mark) {
+			print("<img src='img/manager.png' alt='manager' class='ui-li-icon'>");
+		} else {
+			print("<img src='img/normal.png' alt='normal' class='ui-li-icon'>");
+		}
+		print($item->username);
+		print("</a></li>");
 	}
 
 	print("</ul>");
@@ -233,7 +242,10 @@ function show_one_user($id){
 								} else if ($.trim($('#password').val()) == '') {
 									alert('请填写用户密码!');
 									return false;
-								} 
+								} else if ($.trim($('#password').val()).length < 6) {
+									alert('用户密码长度不得小于6个字符!');
+									return false;
+								}
 							} catch (e) {
 								alert(e);
 								return false;
@@ -242,6 +254,7 @@ function show_one_user($id){
 							function onSuccess(data, status)  
 					        {  
 					            data = $.trim(data); 
+
 					            if (data) {
 					            	if (!$('#hint b').length) {
 										$('#hint').append('<b style=color:red>重</b>');
@@ -311,6 +324,12 @@ function update_user($id, $name, $password, $department_id, $position, $sex, $mo
 		$user -> update_user();
 }
 
+function is_manager($id){
+	require_once("user_class.php");
+	$user = new user;
+	$row = $user -> query_one("user_id=". $id);
+	return $row -> mark;
+}
 /* 删除用户 */
 
 function kill_user($id){
@@ -344,11 +363,13 @@ function show_messages(){
 	require_once("msg_class.php");
 	$msg = new message;
 	$arr_departs = $msg -> query_all_departs();
+	print("<a href='index.php'>返回</a>");
 	print("<form action='index.php' id='AjaxForm_depart' method='post' rel='external' data-ajax='false' onsubmit='return post_response();'>
 			<div class='ui-grid-a'>
 				<div class='ui-block-a'>
 				<select name='department_id' id='select-department'>
-				<option value='-1'>-请选择部门-</option>");
+				<option value='0'>-查看全部-</option>
+				<option value='-1'>所有部门</option>");
 
 				foreach ($arr_departs as $dp_item) {
 					print("<option value='".$dp_item->id."'");
@@ -378,7 +399,7 @@ function show_messages(){
 		$arr_day_result = $msg -> query_one_date($item->days);
 		foreach ($arr_day_result as $item2) {
 			$depart_name = $msg->get_departname($item2->depart_id);
-			if (empty($depart_name)) {$depart_name = '全部';}
+			if (empty($depart_name)) {$depart_name = '所有部门';}
 			print("<li><a data-rel='dialog' data-transition='pop' href='index.php?action=show_one_msg&id=" .$item2->id. "'>
 							<p>".$depart_name."</p>
 							<h3>".$item2->content."</h3>						
@@ -474,7 +495,7 @@ function show_user_msg($username){
 		$arr_day_result = $msg -> query_one_date_user($username, $item->days);
 		foreach ($arr_day_result as $item2) {
 			$depart_name = $msg->get_departname($item2->depart_id);
-			if (empty($depart_name)) {$depart_name = '全部';}
+			if (empty($depart_name)) {$depart_name = '所有部门';}
 			print("<li><a data-rel='dialog' data-transition='pop' href='index.php?action=show_one_user_msg&id=" .$item2->id. "'>
 							<p>".$depart_name."</p>
 							<h3>".$item2->content."</h3>						
@@ -556,7 +577,7 @@ function show_one_msg($id){
 			
 			<label for='select-department' class='select'>部  门:</label>
 			<select name='department_id' id='select-department'>
-			<option value='-1'>-请选择-</option>");
+			<option value='-1'>所有部门</option>");
 	foreach ($arr_results as $item){
 		print("<option value='".$item->id."'");
 		if ($item->id == $depart_id) {

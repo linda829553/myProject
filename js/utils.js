@@ -8,12 +8,12 @@ function checkForm() {
 		alert(e);
 		return false;
 	}
-	return true;
+	// return true;
 }
 
 function deleteEntry_department(id) {
 	try {
-		var confirmString = "删除这个部门.  确定吗?\n" + $.trim($('#department-1').val());
+		var confirmString = "删除这个部门.  确定吗?\n" + $.trim($('#department-1').val()) + "\n建议修改部门，删除后和部门对应的消息将不再显示！";
 		if (window.confirm(confirmString)) {
 			window.location="index.php?action=delete_department&id=" + id;
 		}
@@ -21,7 +21,7 @@ function deleteEntry_department(id) {
 		alert(e);
 		return false;
 	}
-	return true;
+	// return true;
 
 }
 
@@ -35,7 +35,7 @@ function deleteEntry_msg(id) {
 		alert(e);
 		return false;
 	}
-	return true;
+	// return true;
 
 }
 
@@ -79,7 +79,7 @@ function deleteEntry_user(id) {
 		alert(e);
 		return false;
 	}
-	return true;
+	// return true;
 
 }
 

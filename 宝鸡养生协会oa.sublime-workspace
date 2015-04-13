@@ -1,0 +1,1410 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pass",
+				"password"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"ar",
+				"arr_day_result"
+			],
+			[
+				"tex",
+				"textarea-1"
+			],
+			[
+				"query_",
+				"query_one"
+			],
+			[
+				"con",
+				"confirmString"
+			],
+			[
+				"query",
+				"query_one"
+			],
+			[
+				"post_",
+				"post_response"
+			],
+			[
+				"ons",
+				"onsubmit"
+			],
+			[
+				"ui-b",
+				"ui-block-b"
+			],
+			[
+				"depa",
+				"depart_id"
+			],
+			[
+				"dep",
+				"depart_id"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"depar",
+				"depart_id"
+			],
+			[
+				"arti",
+				"article_id"
+			],
+			[
+				"art",
+				"article_id"
+			],
+			[
+				"article_con",
+				"article_content"
+			],
+			[
+				"ec",
+				"echo"
+			],
+			[
+				"pr",
+				"print"
+			],
+			[
+				"ul",
+				"ul_img"
+			],
+			[
+				"ma",
+				"margin-left"
+			],
+			[
+				"ran",
+				"ranking_con1"
+			],
+			[
+				"no",
+				"no-repeat"
+			],
+			[
+				"th",
+				"themes"
+			],
+			[
+				"ra",
+				"ranking_con"
+			],
+			[
+				"co",
+				"commercial"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"t",
+				"text-align"
+			],
+			[
+				"str_re",
+				"str_replace"
+			],
+			[
+				"trim",
+				"trimall"
+			],
+			[
+				"ba",
+				"background-repeat"
+			],
+			[
+				"hot",
+				"hot_top"
+			],
+			[
+				"table-row",
+				"table-row"
+			],
+			[
+				"border-col",
+				"border-color"
+			],
+			[
+				"cl",
+				"clear"
+			],
+			[
+				"bod",
+				"border"
+			],
+			[
+				"市场",
+				"市场参考价"
+			],
+			[
+				"marke",
+				"market_price2"
+			],
+			[
+				"font",
+				"font-size"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "check_user.php",
+			"settings":
+			{
+				"buffer_size": 1759,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "user_class.php",
+			"settings":
+			{
+				"buffer_size": 2964,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "header.php",
+			"settings":
+			{
+				"buffer_size": 401,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/utils.js",
+			"settings":
+			{
+				"buffer_size": 1987,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "ajax_query_mark.php",
+			"settings":
+			{
+				"buffer_size": 175,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Documents/Downloads/Compressed/bakehelpMobile-master/addRecipesPC.php",
+			"settings":
+			{
+				"buffer_size": 5791,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/Documents/Downloads/Compressed/bakehelpMobile-master/recipe.php",
+			"settings":
+			{
+				"buffer_size": 10761,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "login.php",
+			"settings":
+			{
+				"buffer_size": 1793,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "ajax_form_username.php",
+			"settings":
+			{
+				"buffer_size": 377,
+				"line_ending": "Windows",
+				"name": "<?php"
+			}
+		},
+		{
+			"file": "department_class.php",
+			"settings":
+			{
+				"buffer_size": 1475,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "msg_class.php",
+			"settings":
+			{
+				"buffer_size": 4471,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.php",
+			"settings":
+			{
+				"buffer_size": 3709,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "ajax_select_depart.php",
+			"settings":
+			{
+				"buffer_size": 1055,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "class_database.php",
+			"settings":
+			{
+				"buffer_size": 2177,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "all_func.php",
+			"settings":
+			{
+				"buffer_size": 19030,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/D/Documents/Downloads/Compressed/bakehelpMobile-master/index.php",
+			"settings":
+			{
+				"buffer_size": 2899,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/utils.php",
+			"settings":
+			{
+				"buffer_size": 3819,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "source/utils.js",
+			"settings":
+			{
+				"buffer_size": 642,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "source/index.php",
+			"settings":
+			{
+				"buffer_size": 834,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/Documents/Downloads/Compressed/bakehelpMobile-master/addRecipes.php",
+			"settings":
+			{
+				"buffer_size": 10476,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 81.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"i",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"package control:in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 160.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/wamp/www/myProject/index2.php",
+		"/D/wamp/www/myProject/test_11100.php",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/D/wamp/www/myProject/all_func.php",
+		"/D/wamp/www/myProject/all_func.php.dump",
+		"/D/wamp/www/myProject/base_func.php",
+		"/D/Documents/Downloads/Compressed/bakehelpMobile-master/addRecipes.php",
+		"/D/Documents/Downloads/Compressed/bakehelpMobile-master/user_class.php",
+		"/D/Documents/Downloads/Compressed/bakehelpMobile-master/recipe.php",
+		"/D/Documents/Downloads/Compressed/bakehelpMobile-master/index.php",
+		"/D/wamp/www/myProject/index.php",
+		"/D/wamp/www/myProject/source/db.php",
+		"/D/wamp/www/myProject/source/index.php",
+		"/D/wamp/www/myProject/source/header.php",
+		"/D/wamp/www/myProject/source/utils.php",
+		"/D/wamp/www/myProject/header.php",
+		"/D/Documents/Downloads/Compressed/bakehelpMobile-master/footer.php",
+		"/D/wamp/www/myProject/test_checkinput.php",
+		"/D/Documents/Downloads/Compressed/bakehelpMobile-master/header.php",
+		"/D/wamp/www/myProject/checkUser.php",
+		"/D/wamp/www/myProject/class_database.php",
+		"/D/wamp/www/myProject/check.php",
+		"/D/Documents/Downloads/Compressed/bakehelpMobile-master/checkUser.php",
+		"/D/Documents/Downloads/Compressed/bakehelpMobile-master/bakehelp.php",
+		"/D/Documents/Downloads/Compressed/bakehelpMobile-master/class_database.php",
+		"/D/wamp/www/myProject/sys_conf.inc",
+		"/D/Documents/Downloads/Compressed/bakehelpMobile-master/contact.php",
+		"/D/wamp/www/myProject/test_trim.html",
+		"/D/Documents/Tencent Files/183180915/FileRecv/HouseWeb/index.html",
+		"/D/Documents/Tencent Files/183180915/FileRecv/HouseWeb/css/Home.css.dump",
+		"/D/Documents/Tencent Files/183180915/FileRecv/HouseWeb/css/framework.css",
+		"/D/Documents/Tencent Files/183180915/FileRecv/HouseWeb/css/Home.css",
+		"/D/Documents/Tencent Files/183180915/FileRecv/HouseWeb/index.aspx",
+		"/D/wamp/www/myProject/test_login.html",
+		"/D/wamp/www/myProject/base_temp.php",
+		"/D/wamp/www/test/anjvke_koutu/index.html",
+		"/D/wamp/www/index.php",
+		"/D/wamp/www/themes/default/favorable.dwt",
+		"/D/wamp/www/esf.php",
+		"/D/wamp/www/themes/default/library/pages.lbi",
+		"/D/wamp/www/includes/lib_transaction.php",
+		"/D/wamp/www/themes/default/category.dwt",
+		"/D/wamp/www/themes/default/esf_detail.dwt",
+		"/D/wamp/www/user.php",
+		"/D/wamp/www/themes/default/upload.dwt",
+		"/D/wamp/www/themes/default/esfForm.dwt",
+		"/D/wamp/www/themes/default/index.dwt",
+		"/D/wamp/www/themes/default/index_bak_05.dwt",
+		"/D/wamp/www/test/house1/sale.php.dump",
+		"/D/wamp/www/test/house1/a_salepost.php.dump",
+		"/D/wamp/www/test/house1/a_salesave.php",
+		"/D/wamp/www/test/house1/function.php.dump",
+		"/D/wamp/www/admin/goods.php",
+		"/D/wamp/www/themes/default/css/esfForm.css",
+		"/D/wamp/www/themes/default/user_pwd.dwt",
+		"/D/wamp/www/themes/default/user_passport.dwt",
+		"/D/wamp/www/js/utils.js",
+		"/D/wamp/www/includes/lib_passport.php",
+		"/D/wamp/www/themes/default/bj_main.dwt",
+		"/D/wamp/www/themes/default/user_clips.dwt",
+		"/D/wamp/www/themes/default/user_transaction.dwt",
+		"/D/wamp/www/themes/default/library/user_menu.lbi",
+		"/D/wamp/www/themes/default/css/esf.css",
+		"/D/wamp/www/themes/default/esf.dwt",
+		"/D/wamp/www/esf_detail.php",
+		"/D/wamp/www/themes/default/library/page_header.lbi",
+		"/D/wamp/www/test/install.php",
+		"/D/wamp/www/data/config.php",
+		"/D/wamp/www/test/index.php",
+		"/D/wamp/www/test/cache_test2.php",
+		"/D/wamp/www/test/cache_test4_block.php",
+		"/D/wamp/www/test/templates/cache_test4.tpl",
+		"/D/wamp/www/test/libs/debug.tpl",
+		"/D/wamp/www/test/templates/cache_test2.tpl",
+		"/D/wamp/www/test/index.tpl",
+		"/D/wamp/www/includes/init.php",
+		"/D/wamp/www/category.php",
+		"/D/wamp/www/includes/cls_mysql.php",
+		"/D/wamp/www/includes/lib_main.php",
+		"/D/wamp/www/article.php",
+		"/D/wamp/www/test/house1/function.php",
+		"/D/wamp/www/includes/inc_constant.php",
+		"/D/wamp/www/includes/cls_ecshop.php",
+		"/D/wamp/www/test/house1/sale.php",
+		"/D/wamp/www/test/house1/a_salepost.php",
+		"/D/wamp/www/test/house1/a_salesave.php.dump",
+		"/D/wamp/www/test/house1/pub/fwlx.php.dump",
+		"/D/wamp/www/test/house1/pub/fwlx.php",
+		"/D/wamp/www/test/house1/pub/qyfw.php.dump",
+		"/D/wamp/www/test/house1/pub/qyfw.php",
+		"/D/wamp/www/test/house1/_admin/index.php.dump",
+		"/D/wamp/www/test/house1/_admin/login.php.dump",
+		"/D/wamp/www/test/house1/_admin/index.php",
+		"/D/wamp/www/test/house1/_admin/login.php",
+		"/D/wamp/www/includes/lib_payment.php",
+		"/D/wamp/www/themes/default/blank.dwt",
+		"/D/wamp/www/blank.php",
+		"/D/wamp/www/includes/lib.debug.php",
+		"/D/wamp/www/includes/cls_template.php",
+		"/D/wamp/www/includes/lib_common.php",
+		"/D/wamp/www/includes/lib_base.php",
+		"/D/wamp/www/includes/cls_captcha.php",
+		"/D/wamp/www/test/libs/Smarty.class.php",
+		"/D/wamp/www/zhoubian.php",
+		"/D/wamp/www/themes/default/css/index.css",
+		"/D/wamp/www/themes/default/see_house.dwt",
+		"/D/wamp/www/goods.php",
+		"/D/wamp/www/test/weixin/index.php",
+		"/D/wamp/www/test/freevisit/index.php",
+		"/D/wamp/www/sendOnce.php",
+		"/D/wamp/www/themes/default/css/lightbox.css",
+		"/D/wamp/www/themes/default/js/lightbox.min.map",
+		"/D/wamp/www/themes/default/js/lightbox.js",
+		"/D/Documents/Downloads/45871381929509546/js/jquery.colorbox-min.js",
+		"/D/wamp/www/includes/cls_image.php",
+		"/D/wamp/www/themes/default/js/lrtk.js",
+		"/D/Documents/Downloads/jquery特效/8461399640208421/index.html",
+		"/D/wamp/www/test/ad_test/index.html",
+		"/D/wamp/www/test/ad_test/js/lrtk.js",
+		"/D/wamp/www/test/ad_test.html",
+		"/D/wamp/www/daoyoudao/tjf.html",
+		"/D/wamp/www/themes/default/temp.html",
+		"/D/wamp/www/hitGoldEgg/刮刮卡.html",
+		"/D/wamp/www/hitGoldEgg/index.html",
+		"/D/wamp/www/hitGoldEgg/data.php",
+		"/D/wamp/www/hitGoldEgg/view-source m.qy.u-kor.cn web wsc_justScard.do tenantid=26337.html",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/Package Control.sublime-settings",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/Package Control/Package Control.sublime-settings"
+	],
+	"find":
+	{
+		"height": 36.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"用户管理",
+			"add_user",
+			"所有部门",
+			"add_msg",
+			"\"",
+			"返回",
+			"\"",
+			"button",
+			"sele",
+			"username",
+			"\"",
+			"query_one",
+			"position",
+			"department",
+			"user",
+			"href='",
+			"showOneOppJSON",
+			"聽聽聽聽",
+			"leftButtonTAble",
+			"top",
+			"cont-wrap",
+			"con_wrap",
+			"body",
+			"page",
+			"SelectLimit",
+			"display",
+			"pager",
+			"pag",
+			"page",
+			"http://www.ft0917.com/",
+			"house_info",
+			".r",
+			"colorg",
+			"catalog_list",
+			"get_xingqu_goods",
+			"getAll",
+			"select",
+			"shou",
+			"insert",
+			"password",
+			"user",
+			"add",
+			"esf",
+			"select",
+			"onchange=\"auto_fillx()\" ",
+			"value",
+			"hash",
+			"chushouadd",
+			"<script",
+			".js",
+			"script",
+			"user.js",
+			"user",
+			"add",
+			"act",
+			"action",
+			"action=",
+			"act",
+			"profile_pwd",
+			"reset_password",
+			"lang.password_js",
+			"submitPwdInfo",
+			"order_list",
+			"profile_pwd",
+			"profile",
+			"action",
+			"lib",
+			"->display",
+			"comm_left",
+			"订单",
+			"$smarty->display",
+			"display",
+			"http://esf.(.*)",
+			"http://esf.(.*).com/(.*)",
+			"href=\"http*",
+			"catlist",
+			"assign_template",
+			"assign_temp",
+			"res",
+			"fetchRow",
+			"fetch_row",
+			"cls_mysql",
+			"$db",
+			"db",
+			"ctype",
+			"get_navigator",
+			"assign_template",
+			"navigator_list",
+			"nav",
+			"search_keywords",
+			"searchkeywords",
+			"ile_put_contents(",
+			"searchkeywords",
+			"search_key",
+			"display",
+			"cache",
+			"cache_dir",
+			"caching",
+			"display",
+			"179300",
+			"shortt",
+			"home_get_goods",
+			"gif",
+			"display",
+			"960",
+			"$bannertop",
+			"$slidebannertop",
+			"&nbsp;",
+			"display",
+			"cer",
+			"cert",
+			"4",
+			"5",
+			"\n                                             ",
+			"swf",
+			"floor",
+			"get_goods_info",
+			"shop_price",
+			"show_price",
+			"price_format",
+			"shop_price",
+			"get_cat_skin",
+			">display",
+			"display",
+			"dis",
+			"displa",
+			"get_cat_skin",
+			"theme"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"'",
+			"user",
+			"position",
+			"department",
+			"href='index.php",
+			"",
+			"1100",
+			"$(\"#js_ads_banner_top\")",
+			"$(\"#js_ads_banner_top_slide\")",
+			"",
+			"5",
+			"w480"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 14,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "check_user.php",
+					"settings":
+					{
+						"buffer_size": 1759,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								307,
+								307
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "user_class.php",
+					"settings":
+					{
+						"buffer_size": 2964,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								929,
+								929
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 540.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "header.php",
+					"settings":
+					{
+						"buffer_size": 401,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								401,
+								401
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "js/utils.js",
+					"settings":
+					{
+						"buffer_size": 1987,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								548,
+								548
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "ajax_query_mark.php",
+					"settings":
+					{
+						"buffer_size": 175,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								175,
+								175
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/D/Documents/Downloads/Compressed/bakehelpMobile-master/addRecipesPC.php",
+					"settings":
+					{
+						"buffer_size": 5791,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1538,
+								1538
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 600.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/D/Documents/Downloads/Compressed/bakehelpMobile-master/recipe.php",
+					"settings":
+					{
+						"buffer_size": 10761,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4134,
+								4134
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "login.php",
+					"settings":
+					{
+						"buffer_size": 1793,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								833,
+								833
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 60.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "ajax_form_username.php",
+					"settings":
+					{
+						"buffer_size": 377,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								240,
+								240
+							]
+						],
+						"settings":
+						{
+							"auto_name": "<?php",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "department_class.php",
+					"settings":
+					{
+						"buffer_size": 1475,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								717,
+								717
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "msg_class.php",
+					"settings":
+					{
+						"buffer_size": 4471,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2034,
+								2034
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 945.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "index.php",
+					"settings":
+					{
+						"buffer_size": 3709,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								157,
+								157
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "ajax_select_depart.php",
+					"settings":
+					{
+						"buffer_size": 1055,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								442,
+								442
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "class_database.php",
+					"settings":
+					{
+						"buffer_size": 2177,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1427,
+								1427
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 600.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "all_func.php",
+					"settings":
+					{
+						"buffer_size": 19030,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5588,
+								5588
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3425.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "/D/Documents/Downloads/Compressed/bakehelpMobile-master/index.php",
+					"settings":
+					{
+						"buffer_size": 2899,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1031,
+								1031
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 840.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "source/utils.php",
+					"settings":
+					{
+						"buffer_size": 3819,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2377,
+								2377
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1380.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "source/utils.js",
+					"settings":
+					{
+						"buffer_size": 642,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								231,
+								231
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "source/index.php",
+					"settings":
+					{
+						"buffer_size": 834,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								220,
+								220
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "/D/Documents/Downloads/Compressed/bakehelpMobile-master/addRecipes.php",
+					"settings":
+					{
+						"buffer_size": 10476,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1213,
+								1213
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 66.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"aj",
+				"/D/wamp/www/myProject/ajax_form_username.php"
+			],
+			[
+				"ms",
+				"/D/wamp/www/myProject/msg_class.php"
+			],
+			[
+				"re",
+				"/D/Documents/Downloads/Compressed/bakehelpMobile-master/recipe.php"
+			],
+			[
+				"",
+				"/D/wamp/www/themes/default/index.dwt"
+			],
+			[
+				"index",
+				"/D/wamp/www/themes/default/index.dwt"
+			],
+			[
+				"head",
+				"/D/wamp/www/themes/default/library/page_header.lbi"
+			],
+			[
+				"in",
+				"/D/wamp/www/includes/init.php"
+			],
+			[
+				"pa",
+				"/D/wamp/www/themes/default/library/page_header.lbi"
+			],
+			[
+				"init",
+				"/D/wamp/www/includes/init.php"
+			],
+			[
+				"esf",
+				"/D/wamp/www/themes/default/css/esf.css"
+			],
+			[
+				"cl",
+				"/D/wamp/www/includes/cls_mysql.php"
+			],
+			[
+				"ca",
+				"/D/wamp/www/category.php"
+			],
+			[
+				"i",
+				"/D/wamp/www/includes/init.php"
+			],
+			[
+				"e",
+				"/D/wamp/www/esf.php"
+			],
+			[
+				"l",
+				"/D/wamp/www/includes/lib_transaction.php"
+			],
+			[
+				"w",
+				"/D/wamp/www/esf.php"
+			],
+			[
+				"fa",
+				"/D/wamp/www/themes/default/favorable.dwt"
+			],
+			[
+				"a",
+				"/D/wamp/www/themes/default/favorable.dwt"
+			],
+			[
+				"es",
+				"/D/wamp/www/themes/default/esf.dwt"
+			],
+			[
+				"esf.php",
+				"/D/wamp/www/esf_detail.php"
+			],
+			[
+				"esf.",
+				"/D/wamp/www/esf.php"
+			],
+			[
+				"u",
+				"/D/wamp/www/user.php"
+			],
+			[
+				"cls",
+				"/D/wamp/www/includes/cls_mysql.php"
+			],
+			[
+				"us",
+				"/D/wamp/www/user.php"
+			],
+			[
+				"lib",
+				"/D/wamp/www/includes/lib_passport.php"
+			],
+			[
+				"a_",
+				"/D/wamp/www/test/house1/a_salesave.php"
+			],
+			[
+				"user",
+				"/D/wamp/www/user.php"
+			],
+			[
+				"li",
+				"/D/wamp/www/includes/lib_main.php"
+			],
+			[
+				"ini",
+				"/D/wamp/www/includes/init.php"
+			],
+			[
+				"inde",
+				"/D/wamp/www/index.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

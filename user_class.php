@@ -47,6 +47,16 @@
  			return $rows;
  		}
 
+ 		function queryRowsOfUsername(){
+ 			$sql="SELECT * FROM user ";
+ 			$sql.="where username='$this->username'";
+            // echo $sql;
+ 			$db=new database;
+ 			$rows=$db->queryRows($sql);
+ 			$db=mull;
+ 			return $rows;
+ 		}
+
  		function query_all(){
  			$sql="SELECT * FROM user ";
  			$db=new database;

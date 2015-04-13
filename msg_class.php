@@ -78,7 +78,7 @@ class message
 
 	function query_by_date_user($username){
 		$sql = "SELECT FROM_UNIXTIME(post_time,'%c月%d日') days,COUNT(id) COUNT FROM message ,user";
-		$sql .= " WHERE message.depart_id=user.department_id and user.username='$username'";
+		$sql .= " WHERE (message.depart_id=user.department_id or depart_id=-1) and user.username='$username'";
 		$sql .= " GROUP BY days DESC";
 		// echo $sql. "111111111111";
 		// exit;
@@ -91,7 +91,7 @@ class message
 	function query_one_date_user($username, $days){
 		$sql = "SELECT * FROM message, user";
 		$sql .= " WHERE FROM_UNIXTIME(post_time,'%c月%d日') ='$days'";
-		$sql .= " AND message.depart_id=user.department_id and user.username='$username'";
+		$sql .= " AND (message.depart_id=user.department_id or depart_id=-1) and user.username='$username'";
 		$sql .= " ORDER BY post_time DESC";
 		// echo $sql. "222222222222";
 		// exit;
