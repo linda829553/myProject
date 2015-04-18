@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"print",
+				"print_r"
+			],
+			[
 				"pass",
 				"password"
 			],
@@ -176,6 +180,46 @@
 			}
 		},
 		{
+			"file": "all_func.php",
+			"settings":
+			{
+				"buffer_size": 18957,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "more/index.html",
+			"settings":
+			{
+				"buffer_size": 2085,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "more/data.php",
+			"settings":
+			{
+				"buffer_size": 434,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "more/jquery.more.js",
+			"settings":
+			{
+				"buffer_size": 4733,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "more/connect.php",
+			"settings":
+			{
+				"buffer_size": 314,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "user_class.php",
 			"settings":
 			{
@@ -187,7 +231,7 @@
 			"file": "header.php",
 			"settings":
 			{
-				"buffer_size": 401,
+				"buffer_size": 448,
 				"line_ending": "Unix"
 			}
 		},
@@ -281,14 +325,6 @@
 			}
 		},
 		{
-			"file": "all_func.php",
-			"settings":
-			{
-				"buffer_size": 19030,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "/D/Documents/Downloads/Compressed/bakehelpMobile-master/index.php",
 			"settings":
 			{
@@ -302,6 +338,15 @@
 			{
 				"buffer_size": 3819,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "pages.php",
+			"settings":
+			{
+				"buffer_size": 733,
+				"line_ending": "Windows",
+				"name": "include_once('connect.php'); //连接数据库，略过，具体请下载源码查看"
 			}
 		},
 		{
@@ -385,10 +430,15 @@
 	},
 	"file_history":
 	[
+		"/D/wamp/www/myProject/test_updown.html",
+		"/D/wamp/www/myProject/pages/pager.class.php",
+		"/D/wamp/www/myProject/pages/index.php",
+		"/D/wamp/www/myProject/pages/page.class.php",
+		"/D/wamp/www/myProject/ajax_select_depart.php",
+		"/D/wamp/www/myProject/all_func.php",
 		"/D/wamp/www/myProject/index2.php",
 		"/D/wamp/www/myProject/test_11100.php",
 		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
-		"/D/wamp/www/myProject/all_func.php",
 		"/D/wamp/www/myProject/all_func.php.dump",
 		"/D/wamp/www/myProject/base_func.php",
 		"/D/Documents/Downloads/Compressed/bakehelpMobile-master/addRecipes.php",
@@ -507,12 +557,7 @@
 		"/D/wamp/www/test/ad_test.html",
 		"/D/wamp/www/daoyoudao/tjf.html",
 		"/D/wamp/www/themes/default/temp.html",
-		"/D/wamp/www/hitGoldEgg/刮刮卡.html",
-		"/D/wamp/www/hitGoldEgg/index.html",
-		"/D/wamp/www/hitGoldEgg/data.php",
-		"/D/wamp/www/hitGoldEgg/view-source m.qy.u-kor.cn web wsc_justScard.do tenantid=26337.html",
-		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/User/Package Control.sublime-settings",
-		"/C/Users/Administrator/AppData/Roaming/Sublime Text 2/Packages/Package Control/Package Control.sublime-settings"
+		"/D/wamp/www/hitGoldEgg/刮刮卡.html"
 	],
 	"find":
 	{
@@ -530,6 +575,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"show_message",
+			"de",
+			"\"",
 			"用户管理",
 			"add_user",
 			"所有部门",
@@ -654,10 +702,7 @@
 			"get_cat_skin",
 			">display",
 			"display",
-			"dis",
-			"displa",
-			"get_cat_skin",
-			"theme"
+			"dis"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -687,7 +732,7 @@
 	"groups":
 	[
 		{
-			"selected": 14,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -718,44 +763,73 @@
 				},
 				{
 					"buffer": 1,
-					"file": "user_class.php",
+					"file": "all_func.php",
 					"settings":
 					{
-						"buffer_size": 2964,
+						"buffer_size": 18957,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								929,
-								929
+								11994,
+								11994
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 540.0,
+						"translation.y": 6865.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "header.php",
+					"file": "more/index.html",
 					"settings":
 					{
-						"buffer_size": 401,
+						"buffer_size": 2085,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								401,
-								401
+								1363,
+								1363
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "more/data.php",
+					"settings":
+					{
+						"buffer_size": 434,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								434,
+								434
 							]
 						],
 						"settings":
@@ -769,7 +843,113 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
+					"file": "more/jquery.more.js",
+					"settings":
+					{
+						"buffer_size": 4733,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								410,
+								410
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1800.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "more/connect.php",
+					"settings":
+					{
+						"buffer_size": 314,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								104,
+								104
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "user_class.php",
+					"settings":
+					{
+						"buffer_size": 2964,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								629,
+								631
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "header.php",
+					"settings":
+					{
+						"buffer_size": 448,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								396,
+								396
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
 					"file": "js/utils.js",
 					"settings":
 					{
@@ -796,7 +976,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 9,
 					"file": "ajax_query_mark.php",
 					"settings":
 					{
@@ -822,7 +1002,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 10,
 					"file": "/D/Documents/Downloads/Compressed/bakehelpMobile-master/addRecipesPC.php",
 					"settings":
 					{
@@ -849,7 +1029,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 11,
 					"file": "/D/Documents/Downloads/Compressed/bakehelpMobile-master/recipe.php",
 					"settings":
 					{
@@ -870,13 +1050,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2040.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 12,
 					"file": "login.php",
 					"settings":
 					{
@@ -903,7 +1083,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 13,
 					"file": "ajax_form_username.php",
 					"settings":
 					{
@@ -932,7 +1112,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 14,
 					"file": "department_class.php",
 					"settings":
 					{
@@ -952,13 +1132,13 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.y": 540.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 15,
 					"file": "msg_class.php",
 					"settings":
 					{
@@ -979,13 +1159,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 945.0,
+						"translation.y": 1845.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 16,
 					"file": "index.php",
 					"settings":
 					{
@@ -1006,13 +1186,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 240.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 17,
 					"file": "ajax_select_depart.php",
 					"settings":
 					{
@@ -1023,8 +1203,8 @@
 						"selection":
 						[
 							[
-								442,
-								442
+								507,
+								507
 							]
 						],
 						"settings":
@@ -1039,7 +1219,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 18,
 					"file": "class_database.php",
 					"settings":
 					{
@@ -1050,8 +1230,8 @@
 						"selection":
 						[
 							[
-								1427,
-								1427
+								1503,
+								1503
 							]
 						],
 						"settings":
@@ -1059,40 +1239,13 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 600.0,
+						"translation.y": 660.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 14,
-					"file": "all_func.php",
-					"settings":
-					{
-						"buffer_size": 19030,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5588,
-								5588
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3425.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 15,
+					"buffer": 19,
 					"file": "/D/Documents/Downloads/Compressed/bakehelpMobile-master/index.php",
 					"settings":
 					{
@@ -1103,8 +1256,8 @@
 						"selection":
 						[
 							[
-								1031,
-								1031
+								990,
+								990
 							]
 						],
 						"settings":
@@ -1119,7 +1272,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 20,
 					"file": "source/utils.php",
 					"settings":
 					{
@@ -1130,8 +1283,8 @@
 						"selection":
 						[
 							[
-								2377,
-								2377
+								3435,
+								3435
 							]
 						],
 						"settings":
@@ -1140,13 +1293,40 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1380.0,
+						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 17,
+					"buffer": 21,
+					"file": "pages.php",
+					"settings":
+					{
+						"buffer_size": 733,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								733,
+								733
+							]
+						],
+						"settings":
+						{
+							"auto_name": "include_once('connect.php'); //连接数据库，略过，具体请下载源码查看",
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 22,
 					"file": "source/utils.js",
 					"settings":
 					{
@@ -1157,8 +1337,8 @@
 						"selection":
 						[
 							[
-								231,
-								231
+								625,
+								625
 							]
 						],
 						"settings":
@@ -1173,7 +1353,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 23,
 					"file": "source/index.php",
 					"settings":
 					{
@@ -1200,7 +1380,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 19,
+					"buffer": 24,
 					"file": "/D/Documents/Downloads/Compressed/bakehelpMobile-master/addRecipes.php",
 					"settings":
 					{
@@ -1270,6 +1450,18 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"cla",
+				"/D/wamp/www/myProject/class_database.php"
+			],
+			[
+				"all",
+				"/D/wamp/www/myProject/all_func.php"
+			],
+			[
+				"hea",
+				"/D/wamp/www/myProject/header.php"
+			],
 			[
 				"aj",
 				"/D/wamp/www/myProject/ajax_form_username.php"
