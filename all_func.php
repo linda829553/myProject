@@ -337,16 +337,17 @@ function show_messages(){
 				</div>
 			
 				<div class='ui-block-b'>
-					<button type='submit' id='submit_select_menu' value='Save'>查 询</button>
+					<button type='submit' id='submit_select_menu' value='Save'>查 询</button>	
 				</div>
 			</div>
 		</form>\n");
 	print("<a data-rel='dialog' data-transition='pop' href='index.php?action=add_msg'>发布消息</a><br/>");
-	// <p>Hey Stephen, if you're available at 10am tomorrow, we've got a meeting with the jQuery team.</p>
-	// <p class="ui-li-aside"><strong>6:24</strong>PM</p>
+
+
 	$arr_result = $msg -> query_by_date();
+	print("<input type='hidden' id='pagenum' value='1' />");
 	print("<ul id='list_date' data-role='listview' data-inset='true'>");
-	date_default_timezone_set("Asia/Shanghai");
+
 	foreach ($arr_result as $item) {
 		print("<li data-role='list-divider'>$item->days<span class='ui-li-count'>$item->COUNT</span></li>");
 		$arr_day_result = $msg -> query_one_date($item->days);
@@ -362,12 +363,53 @@ function show_messages(){
 			
 	}
 	print("</ul>");
+	print("<button name='more' onclick='getMore()' id='more'>点击浏览更多...</button>");
+
+
+
+
 	print("
 		<script>
-			// 内联页面强制刷新
-			// $.mobile.changePage(page1, {
-			//  'reloadPage' : true,
-			// });
+			$(function(){
+				
+
+			});
+		    
+			function getMore(){
+				var pagenum = $('#pagenum').val();
+				$.ajax({
+					type: 'post',
+					url: 'getMoreListInfo.php',
+					data: {'pageNo':pagenum},
+					dataType: 'json',
+					success: function(status){
+						$('#pagenum').val(status.currentPageNo);
+						var dlist = status.list;
+						var str = '';
+						for(i in dlist){
+							str += '<li data-role=\"list-divider\">'+ dlist[i].days +'<span class=\"ui-li-count\">'+ dlist[i].count +'</span></li>';
+							var olist = status[dlist[i].days];
+							// console.log(typeof olist);
+							// console.log(olist);
+							for (j in olist) { 
+								str += '<li><a data-rel=\"dialog\" data-transition=\"pop\" href=\"index.php?action=show_one_msg&id='+ olist[j].id +'\">';
+								str += '<p>'+ olist[j].depart_name + '</p>';
+								str += '<h3>'+ olist[j].content +'</h3>';
+								str += '<p class=\"ui-li-aside\"><strong>'+ olist[j].time +'</strong></p></a></li>';
+							}
+						}
+						$('#list_date').append(str).listview('refresh');
+						if(parseInt(status.totalPage) == parseInt(status.currentPageNo)){
+							$('#more').text('己全部加载完成');
+							$('#more').attr('onclick', '');
+						}else if(parseInt(status.totalPage) < parseInt(status.currentPageNo)){
+							$('#more').hide();
+						}
+					}
+
+				});
+			}
+
 			function post_response(){
 				// alert('改变了');
 				// $('#list_date').html('<li></li>');
@@ -404,11 +446,7 @@ function show_messages(){
 			}
 			
 			$(document).ready(function() {  
-				/* change 事件不成功的时候，可以提交*/
-				// $('#submit_select_menu').click(function(){
-				// 	alert(222222);
-				// 	 	post_response();
-				// });
+
 			    $('#select-department').change(function(){  
 						post_response();
 			    });  

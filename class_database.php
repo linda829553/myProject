@@ -6,6 +6,7 @@
  * Window - Preferences - PHPeclipse - PHP - Code Templates
  */
 	require_once("sys_conf.inc");			// 包含系统配置文件
+	date_default_timezone_set("Asia/Shanghai");
  	class database{
  		// 属性
  		private $host;				// 服务器名

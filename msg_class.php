@@ -59,7 +59,7 @@ class message
 	}
 
 	function query_by_date(){
-		$sql="SELECT FROM_UNIXTIME(post_time,'%c月%d日') days,COUNT(id) COUNT FROM message GROUP BY days DESC";
+		$sql="SELECT FROM_UNIXTIME(post_time,'%c月%d日') days,COUNT(id) COUNT FROM message GROUP BY days DESC LIMIT 3";
 		$db=new database;
 		$msg=$db->query($sql);
 		$db=null;

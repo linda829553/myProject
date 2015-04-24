@@ -4,6 +4,54 @@
 		"selected_items":
 		[
 			[
+				"for",
+				"for	for …"
+			],
+			[
+				"url",
+				"urlencode"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"depar",
+				"department_name"
+			],
+			[
+				"arr",
+				"array"
+			],
+			[
+				"tot",
+				"totalPage"
+			],
+			[
+				"page",
+				"pageSize"
+			],
+			[
+				"pag",
+				"pageSize"
+			],
+			[
+				"mysql_num",
+				"mysql_num_rows"
+			],
+			[
+				"sta",
+				"status"
+			],
+			[
+				"depart",
+				"depart_name"
+			],
+			[
+				"list",
+				"listview"
+			],
+			[
 				"print",
 				"print_r"
 			],
@@ -62,10 +110,6 @@
 			[
 				"fun",
 				"function"
-			],
-			[
-				"depar",
-				"depart_id"
 			],
 			[
 				"arti",
@@ -183,15 +227,34 @@
 			"file": "all_func.php",
 			"settings":
 			{
-				"buffer_size": 18957,
+				"buffer_size": 19594,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "more/index.html",
+			"file": "getMoreListInfo.php",
 			"settings":
 			{
-				"buffer_size": 2085,
+				"buffer_size": 1528,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "connect.php",
+			"settings":
+			{
+				"buffer_size": 318,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />\n<meta name=\"keywords\" content=\"livequery,jquery\" />\n<meta name=\"description\" content=\"Helloweba演示平台，演示XHTML、CSS、jquery、PHP案例和示例\" />\n<title>jQuery+PHP实现浏览更多内容</title>\n\n<style type=\"text/css\">\n#more{margin:10px auto;width: 560px;  border: 1px solid #999;}               \n.single_item{padding: 20px; border-bottom: 1px dotted #d3d3d3;}\n.author{position: absolute; left: 0px; font-weight:bold; color:#39f}\n.date{position: absolute; right: 0px; color:#999}\n.content{line-height:20px; word-break: break-all;}\n.element_head{width: 100%; position: relative; height: 20px;}\n.get_more{margin:10px; text-align:center}\n.more_loader_spinner{width:20px; height:20px; margin:10px auto; background: url(loader.gif) no-repeat;}\n</style>\n<script type='text/javascript' src='http://libs.useso.com/js/jquery/1.7.2/jquery.min.js'></script>\n<script type=\"text/javascript\" src=\"jquery.more.js\"></script>\n<script type=\"text/javascript\">\n$(function(){\n	$('#more').more({'address': 'data.php'})\n});\n</script>\n</head> \n\n<body>\n<div id=\"header\">\n   <div id=\"logo\"><h1><a href=\"http://www.helloweba.com\" title=\"返回helloweba首页\">helloweba</a></h1></div>\n</div>\n\n<div id=\"main\">\n  <h2 class=\"top_title\"><a href=\"http://www.helloweba.com/view-blog-130.html\">jQuery+PHP实现浏览更多内容</a></h2>\n  <p style=\"margin:20px\">提示：点击列表下的链接可以加载更多内容</p>\n  <div id=\"more\">\n        <div class=\"single_item\">\n             <div class=\"element_head\">\n                  <div class=\"date\"></div>\n                  <div class=\"author\"></div>\n              </div>\n              <div class=\"content\"></div>\n        </div>\n        <a href=\"javascript:;\" class=\"get_more\">::点击加载更多内容::</a>\n  </div> \n  <br />\n<br />\n<br />\n\n</div>\n<div id=\"footer\">\n    <p>Powered by helloweba.com  允许转载、修改和使用本站的DEMO，但请注明出处：<a href=\"http://www.helloweba.com\">www.helloweba.com</a></p>\n</div>\n<p id=\"stat\"></p>\n</body>\n</html>\n",
+			"file": "more/index.html",
+			"file_size": 2307,
+			"file_write_time": 130738175935630789,
+			"settings":
+			{
+				"buffer_size": 2086,
 				"line_ending": "Windows"
 			}
 		},
@@ -199,15 +262,7 @@
 			"file": "more/data.php",
 			"settings":
 			{
-				"buffer_size": 434,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "more/jquery.more.js",
-			"settings":
-			{
-				"buffer_size": 4733,
+				"buffer_size": 497,
 				"line_ending": "Windows"
 			}
 		},
@@ -296,7 +351,7 @@
 			"file": "msg_class.php",
 			"settings":
 			{
-				"buffer_size": 4471,
+				"buffer_size": 4479,
 				"line_ending": "Windows"
 			}
 		},
@@ -320,7 +375,15 @@
 			"file": "class_database.php",
 			"settings":
 			{
-				"buffer_size": 2177,
+				"buffer_size": 2222,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sys_conf.inc",
+			"settings":
+			{
+				"buffer_size": 191,
 				"line_ending": "Unix"
 			}
 		},
@@ -430,6 +493,11 @@
 	},
 	"file_history":
 	[
+		"/D/wamp/www/myProject/more/jquery.more.js",
+		"/D/wamp/www/myProject/js/jquery.esn.autobrowse.js.dump",
+		"/D/wamp/www/myProject/js/jquery.esn.autobrowse.js",
+		"/D/Documents/Downloads/jquery-ias.min.js",
+		"/D/wamp/www/myProject/js/infiniScroll.js",
 		"/D/wamp/www/myProject/test_updown.html",
 		"/D/wamp/www/myProject/pages/pager.class.php",
 		"/D/wamp/www/myProject/pages/index.php",
@@ -552,12 +620,7 @@
 		"/D/wamp/www/includes/cls_image.php",
 		"/D/wamp/www/themes/default/js/lrtk.js",
 		"/D/Documents/Downloads/jquery特效/8461399640208421/index.html",
-		"/D/wamp/www/test/ad_test/index.html",
-		"/D/wamp/www/test/ad_test/js/lrtk.js",
-		"/D/wamp/www/test/ad_test.html",
-		"/D/wamp/www/daoyoudao/tjf.html",
-		"/D/wamp/www/themes/default/temp.html",
-		"/D/wamp/www/hitGoldEgg/刮刮卡.html"
+		"/D/wamp/www/test/ad_test/index.html"
 	],
 	"find":
 	{
@@ -575,6 +638,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"'",
+			"\"",
+			"html",
+			"text",
 			"show_message",
 			"de",
 			"\"",
@@ -698,11 +765,7 @@
 			"shop_price",
 			"show_price",
 			"price_format",
-			"shop_price",
-			"get_cat_skin",
-			">display",
-			"display",
-			"dis"
+			"shop_price"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -710,6 +773,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"\\\"",
 			"'",
 			"user",
 			"position",
@@ -732,7 +796,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -766,15 +830,15 @@
 					"file": "all_func.php",
 					"settings":
 					{
-						"buffer_size": 18957,
+						"buffer_size": 19594,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11994,
-								11994
+								13301,
+								13301
 							]
 						],
 						"settings":
@@ -783,25 +847,78 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 6865.0,
+						"translation.y": 7525.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "more/index.html",
+					"file": "getMoreListInfo.php",
 					"settings":
 					{
-						"buffer_size": 2085,
+						"buffer_size": 1528,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1363,
-								1363
+								1258,
+								1258
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 120.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "connect.php",
+					"settings":
+					{
+						"buffer_size": 318,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								108,
+								108
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "more/index.html",
+					"settings":
+					{
+						"buffer_size": 2086,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1169,
+								1169
 							]
 						],
 						"settings":
@@ -817,73 +934,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 5,
 					"file": "more/data.php",
 					"settings":
 					{
-						"buffer_size": 434,
+						"buffer_size": 497,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								434,
-								434
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "more/jquery.more.js",
-					"settings":
-					{
-						"buffer_size": 4733,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								410,
-								410
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1800.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "more/connect.php",
-					"settings":
-					{
-						"buffer_size": 314,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								104,
-								104
+								250,
+								250
 							]
 						],
 						"settings":
@@ -898,18 +961,18 @@
 				},
 				{
 					"buffer": 6,
-					"file": "user_class.php",
+					"file": "more/connect.php",
 					"settings":
 					{
-						"buffer_size": 2964,
+						"buffer_size": 314,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								629,
-								631
+								314,
+								314
 							]
 						],
 						"settings":
@@ -924,6 +987,32 @@
 				},
 				{
 					"buffer": 7,
+					"file": "user_class.php",
+					"settings":
+					{
+						"buffer_size": 2964,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1122,
+								1122
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 300.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
 					"file": "header.php",
 					"settings":
 					{
@@ -934,13 +1023,14 @@
 						"selection":
 						[
 							[
-								396,
-								396
+								441,
+								441
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -949,7 +1039,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 9,
 					"file": "js/utils.js",
 					"settings":
 					{
@@ -976,7 +1066,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 10,
 					"file": "ajax_query_mark.php",
 					"settings":
 					{
@@ -1002,7 +1092,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 11,
 					"file": "/D/Documents/Downloads/Compressed/bakehelpMobile-master/addRecipesPC.php",
 					"settings":
 					{
@@ -1029,7 +1119,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 12,
 					"file": "/D/Documents/Downloads/Compressed/bakehelpMobile-master/recipe.php",
 					"settings":
 					{
@@ -1056,7 +1146,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 12,
+					"buffer": 13,
 					"file": "login.php",
 					"settings":
 					{
@@ -1083,7 +1173,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 14,
 					"file": "ajax_form_username.php",
 					"settings":
 					{
@@ -1112,7 +1202,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 15,
 					"file": "department_class.php",
 					"settings":
 					{
@@ -1138,19 +1228,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 15,
+					"buffer": 16,
 					"file": "msg_class.php",
 					"settings":
 					{
-						"buffer_size": 4471,
+						"buffer_size": 4479,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2034,
-								2034
+								1481,
+								1481
 							]
 						],
 						"settings":
@@ -1158,14 +1248,14 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
-						"translation.x": 0.0,
-						"translation.y": 1845.0,
+						"translation.x": 36.0,
+						"translation.y": 1005.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 16,
+					"buffer": 17,
 					"file": "index.php",
 					"settings":
 					{
@@ -1192,7 +1282,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 17,
+					"buffer": 18,
 					"file": "ajax_select_depart.php",
 					"settings":
 					{
@@ -1203,8 +1293,8 @@
 						"selection":
 						[
 							[
-								507,
-								507
+								265,
+								265
 							]
 						],
 						"settings":
@@ -1219,19 +1309,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 18,
+					"buffer": 19,
 					"file": "class_database.php",
 					"settings":
 					{
-						"buffer_size": 2177,
+						"buffer_size": 2222,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1503,
-								1503
+								263,
+								263
 							]
 						],
 						"settings":
@@ -1239,13 +1329,39 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 660.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 19,
+					"buffer": 20,
+					"file": "sys_conf.inc",
+					"settings":
+					{
+						"buffer_size": 191,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 21,
 					"file": "/D/Documents/Downloads/Compressed/bakehelpMobile-master/index.php",
 					"settings":
 					{
@@ -1272,7 +1388,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 20,
+					"buffer": 22,
 					"file": "source/utils.php",
 					"settings":
 					{
@@ -1283,8 +1399,8 @@
 						"selection":
 						[
 							[
-								3435,
-								3435
+								1943,
+								1943
 							]
 						],
 						"settings":
@@ -1293,13 +1409,13 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 180.0,
+						"translation.y": 2340.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 21,
+					"buffer": 23,
 					"file": "pages.php",
 					"settings":
 					{
@@ -1326,7 +1442,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 22,
+					"buffer": 24,
 					"file": "source/utils.js",
 					"settings":
 					{
@@ -1353,7 +1469,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 23,
+					"buffer": 25,
 					"file": "source/index.php",
 					"settings":
 					{
@@ -1380,7 +1496,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 24,
+					"buffer": 26,
 					"file": "/D/Documents/Downloads/Compressed/bakehelpMobile-master/addRecipes.php",
 					"settings":
 					{
@@ -1451,20 +1567,48 @@
 		"selected_items":
 		[
 			[
-				"cla",
-				"/D/wamp/www/myProject/class_database.php"
-			],
-			[
 				"all",
 				"/D/wamp/www/myProject/all_func.php"
+			],
+			[
+				"msg",
+				"/D/wamp/www/myProject/msg_class.php"
+			],
+			[
+				"aj",
+				"/D/wamp/www/myProject/ajax_select_depart.php"
 			],
 			[
 				"hea",
 				"/D/wamp/www/myProject/header.php"
 			],
 			[
-				"aj",
-				"/D/wamp/www/myProject/ajax_form_username.php"
+				"h",
+				"/D/wamp/www/myProject/header.php"
+			],
+			[
+				"",
+				"/D/wamp/www/myProject/header.php"
+			],
+			[
+				"in",
+				"/D/wamp/www/myProject/js/infiniScroll.js"
+			],
+			[
+				"he",
+				"/D/wamp/www/myProject/header.php"
+			],
+			[
+				"da",
+				"/D/wamp/www/myProject/more/data.php"
+			],
+			[
+				"clas",
+				"/D/wamp/www/myProject/class_database.php"
+			],
+			[
+				"cla",
+				"/D/wamp/www/myProject/class_database.php"
 			],
 			[
 				"ms",
@@ -1475,20 +1619,12 @@
 				"/D/Documents/Downloads/Compressed/bakehelpMobile-master/recipe.php"
 			],
 			[
-				"",
-				"/D/wamp/www/themes/default/index.dwt"
-			],
-			[
 				"index",
 				"/D/wamp/www/themes/default/index.dwt"
 			],
 			[
 				"head",
 				"/D/wamp/www/themes/default/library/page_header.lbi"
-			],
-			[
-				"in",
-				"/D/wamp/www/includes/init.php"
 			],
 			[
 				"pa",
