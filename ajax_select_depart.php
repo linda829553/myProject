@@ -22,7 +22,7 @@
 			if (empty($depart_name)) {$depart_name = '所有部门';}
 			print("<li><a data-rel='dialog' data-transition='pop' href='index.php?action=show_one_msg&id=" .$item2->id. "'>
 							<p>".$depart_name."</p>
-							<h3>".$item2->content."</h3>						
+							<h3>".$item2->content."</h3>				
 							<p class='ui-li-aside'><strong>".date('h:i:sA', $item2->post_time)."</strong></p>
 							</a></li>");
 		}
